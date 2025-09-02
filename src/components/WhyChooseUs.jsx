@@ -2,33 +2,33 @@ export default function WhyChooseUs() {
   const features = [
     {
       number: "01",
-      title: "Get Buyers for Your Food Products",
-      desc: "No matter the type of food or spice you plan on exporting, we will ensure that you get genuine buyers for your products who meet your expectations.",
+      title: "Strong Farmer Network",
+      desc: "With over 20 years of domestic presence across India, we are deeply connected with farmers, ensuring authencity and consistency in supply.",
     },
     {
       number: "02", 
-      title: "Best quality food trading services",
-      desc: "Our stringent policies make sure that food handling and trading is in accordance with international quality standards.",
+      title: "Assured Quality",
+      desc: "Every product undergoes strict quality checks to meet international food safety and freshness standards.",
     },
     {
       number: "03",
-      title: "Global Presence",
-      desc: "Even if you are planning to export across multiple countries, we ensure that you get the best of our services."
+      title: "Expanding Global Reach",
+      desc: "We are building strong international partnershios to deliver Indian agriculture to markets across the world."
     },
     {
       number: "04",
-      title: "Market Analysis & Up-to-date Market Information",
-      desc: "Our thorough and regular analysis and research let us update our database with up to date information on the market and allows us to stay on top of every update.",
+      title: "Market Expertise",
+      desc: "Our knowlegde and insights help buyers and partners access the right products at the right time.",
     },
     {
       number: "05",
-      title: "Reliable & Trusted Services",
-      desc: "Trust is a pillar of our services. Our transparent and reliable operations ensure that you feel at ease with our services.",
+      title: "Trusted & Transparent ",
+      desc: "Integrity drives our operations - we maintain clear, reliable, and ethical practices at every stage .",
     },
     {
       number: "06",
-      title: "Save your time & cost for searching markets",
-      desc: "Understanding and researching the market by yourself takes a lot of time and effort. We make sure that you don't have to go through this trouble."
+      title: "Cost & Time Efficiency",
+      desc: "Our streamlined supply chains and strong market network help partners save time, reduce costs, and maximize value."
     }
   ];
 
