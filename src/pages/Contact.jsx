@@ -17,6 +17,7 @@ function Contact() {
       [e.target.name]: e.target.value
     });
   };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 py-4">
       <div className="relative bg-gradient-to-r from-slate-600 to-slate-800 py-16 px-6 mb-8 overflow-hidden">
@@ -177,8 +178,6 @@ function Contact() {
           </div>
         </div>
       </div>
-
-      {/* Map Section */}
       <div className="mt-16 max-w-6xl mx-auto px-6">
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <iframe
@@ -190,6 +189,7 @@ function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full"
+            title="Numa Agri Prime Location Map"
           ></iframe>
         </div>
       </div>
