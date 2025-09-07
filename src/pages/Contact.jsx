@@ -17,28 +17,22 @@ function Contact() {
       [e.target.name]: e.target.value
     });
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-slate-200 py-4">
-      {/* Header with icons and background image */}
       <div className="relative bg-gradient-to-r from-slate-600 to-slate-800 py-16 px-6 mb-8 overflow-hidden">
-        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80')`
           }}
         ></div>
-        
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex items-center mb-8">
             <h1 className="text-7xl font-bold text-white mr-8">Contact Us</h1>
             <div className="text-white text-sm">
               <span>HOME</span> <span className="mx-2">/</span> <span>CONTACT US</span>
             </div>
-          </div>
-          
-          {/* Contact method icons */}
+          </div>          
           <div className="flex gap-6 justify-center">
             <div className="bg-white/20 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/30 transition-colors duration-200">
               <Mail className="w-12 h-12 text-white" />
@@ -55,13 +49,10 @@ function Contact() {
           </div>
         </div>
       </div>
-
       <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
-        {/* Left side - Contact Information */}
         <div className="space-y-8">
           <div>
             <h2 className="text-2xl font-bold text-gray-800 mb-6">REGISTERED ADDRESS:</h2>
-            
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gray-600 mt-1 flex-shrink-0" />
@@ -71,12 +62,10 @@ function Contact() {
                   <p>Mahantesh Nagar, Belgaum 590016 India</p>
                 </div>
               </div>
-              
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gray-600" />
                 <p className="text-gray-700">numaagriprime@gmail.com</p>
               </div>
-              
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gray-600" />
                 <p className="text-gray-700">+91 9880204002 / 7411041565</p>
@@ -84,8 +73,6 @@ function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Right side - Contact Form */}
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-6">CONNECT WITH US</h2>
           

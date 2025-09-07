@@ -1,34 +1,28 @@
 export default function Footer() {
   const informationLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "About", href: "/about" },
     { name: "Certificates", href: "/certificates" },
     { name: "Products Range", href: "/products" },
-    { name: "Become Supplier", href: "/supplier" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Careers", href: "/careers" },
+    { name: "Blogs", href: "/blog" },  // fixed path (was /blogs)
     { name: "Contact Us", href: "/contact" }
   ];
-
   const productsRange = [
-    { name: "Grains And Cereal", href: "/grains-cereal" },
-    { name: "Pulses", href: "/pulses" },
-    { name: "Spices", href: "/spices" },
-    { name: "Fruits", href: "/fruits" },
-    { name: "Vegetables", href: "/vegetables" },
-    { name: "Oilseeds", href: "/oilseeds" },
-    { name: "Floriculture", href: "/floriculture" },
-    { name: "Herbs", href: "/herbs" },
-    { name: "Dry Fruits", href: "/dry-fruits" },
-    { name: "Beverages", href: "/beverages" },
-    { name: "Dehydrated Products", href: "/dehydrated" }
+    { name: "Grains and Cereals", href: "/products/cereals" },
+    { name: "Pulses", href: "/products/pulses" },
+    { name: "Spices", href: "/products/spices" },
+    { name: "Fruits", href: "/products/fruits" },
+    { name: "Vegetables", href: "/products/vegetables" },
+    { name: "Herbs", href: "/products/herbs" },
+    { name: "Dry Fruits", href: "/products/dry-fruits" }
   ];
+
   const socialIcons = [
     { 
       name: "YouTube", 
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
         </svg>
       ),
       color: "text-red-500 hover:text-red-400"
@@ -70,10 +64,12 @@ export default function Footer() {
       color: "text-pink-500 hover:text-pink-400"
     }
   ];
+
   return (
     <footer className="bg-gray-800 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Info Links */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Information</h3>
             <div className="w-12 h-0.5 bg-gray-600 mb-6"></div>
@@ -91,6 +87,8 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Products Range */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Products Range</h3>
             <div className="w-12 h-0.5 bg-gray-600 mb-6"></div>
@@ -108,6 +106,8 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Contact Info */}
           <div>
             <h3 className="text-xl font-semibold text-white mb-6">Stay Connected</h3>
             <div className="w-12 h-0.5 bg-gray-600 mb-6"></div>
@@ -126,6 +126,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+
             <div className="mb-6">
               <div className="flex items-start mb-2">
                 <svg className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -133,10 +134,11 @@ export default function Footer() {
                 </svg>
                 <div>
                   <p className="text-white font-medium">Phone Number:</p>
-                  <p className="text-gray-300"> 9880204002 / 7411041565</p>
+                  <p className="text-gray-300">+91 9880204002 / 7411041565</p>
                 </div>
               </div>
             </div>
+
             <div className="mb-8">
               <div className="flex items-start mb-2">
                 <svg className="w-5 h-5 text-gray-400 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -151,7 +153,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-8 mt-8">
+
+        {/* Uncomment to show social icons */}
+        {/* <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex justify-center space-x-6">
             {socialIcons.map((social, index) => (
               <a
@@ -162,7 +166,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

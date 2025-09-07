@@ -35,7 +35,7 @@ const blogs = [
   {
     id: 4,
     title: "Chillies in India - Varieties, Uses & Benefits",
-    img: "https://images.unsplash.com/photo-1583324295719-5d7a2b5b3e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    img: "/images/blogs/chillies.jpg", // top-left
     desc: "Chillies are the core of a hearty Indian meal & have various benefits to our health. Read the complete article to know various details about Indian chillies.",
     date: "February 28, 2024",
     author: "Numa Team",
@@ -45,7 +45,7 @@ const blogs = [
   {
     id: 5,
     title: "Barley Details & Benefits - King of Cereals",
-    img: "https://images.unsplash.com/photo-1574323323496-fb4ac8d87db3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    img: "/images/blogs/barley.jpg", // barley close-up from Unsplash via search
     desc: "Barley is considered to be king of cereals. Read the blog to know details and benefits of Barley including its nutritional value and uses.",
     date: "February 20, 2024",
     author: "Numa Team",
