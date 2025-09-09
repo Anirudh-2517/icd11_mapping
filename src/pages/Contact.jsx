@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Smartphone, MessageSquare, MapPin } from 'lucide-react';
-
 function Contact() {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -10,7 +9,6 @@ function Contact() {
     company: '',
     message: ''
   });
-
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -76,7 +74,6 @@ function Contact() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-6">CONNECT WITH US</h2>
-          
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -92,7 +89,6 @@ function Contact() {
                   placeholder="Enter your full name"
                 />
               </div>
-              
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
                   Email <span className="text-red-500">*</span>
@@ -107,7 +103,6 @@ function Contact() {
                 />
               </div>
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
@@ -125,7 +120,6 @@ function Contact() {
                   <option value="+61">Australia (+61)</option>
                 </select>
               </div>
-              
               <div>
                 <label className="block text-gray-700 font-medium mb-2">
                   Mobile Number <span className="text-red-500">*</span>
@@ -140,7 +134,6 @@ function Contact() {
                 />
               </div>
             </div>
-
             <div>
               <label className="block text-gray-700 font-medium mb-2">
                 Company Name <span className="text-red-500">*</span>
@@ -154,7 +147,6 @@ function Contact() {
                 placeholder="Enter company name"
               />
             </div>
-
             <div>
               <label className="block text-gray-700 font-medium mb-2">
                 Message <span className="text-red-500">*</span>
@@ -168,11 +160,9 @@ function Contact() {
                 placeholder="Enter your message..."
               ></textarea>
             </div>
-
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl"
-            >
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 shadow-lg hover:shadow-xl">
               Send Message
             </button>
           </div>

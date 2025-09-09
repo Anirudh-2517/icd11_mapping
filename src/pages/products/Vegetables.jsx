@@ -4,55 +4,55 @@ export default function Vegetables() {
   const vegetableVarieties = [
     {
       title: "Onion",
-      image: "https://images.unsplash.com/photo-1607305387299-c9b06ef814d6?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/onion.jpg",
       desc: "Fresh red and white onions with high shelf life and strong pungency, widely exported across the globe.",
       specifications: "Size: 40-70mm | Moisture: <14% | Packaging: 25kg/50kg mesh bags",
     },
     {
       title: "Garlic",
-      image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/garlic.jpg",
       desc: "Premium Indian garlic with high flavor and medicinal properties, popular in Middle East, Asia & Europe.",
       specifications: "Clove Size: 4.5cm+ | Moisture: <13% | Packaging: 25kg/50kg bags",
     },
     {
       title: "Potato",
-      image: "https://images.unsplash.com/photo-1603052875876-81f6c7c4ad89?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/potato.jpg",
       desc: "Fresh Indian potatoes rich in starch, suitable for export in bulk quantities.",
       specifications: "Size: 45mm+ | Moisture: <12% | Packaging: 25kg/50kg bags",
     },
     {
       title: "Okra (Ladyfinger)",
-      image: "https://images.unsplash.com/photo-1592924357228-6a5f7b19e781?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/okra.jpg",
       desc: "Tender and fresh okra with bright green pods, exported mainly to Middle East and Europe.",
       specifications: "Length: 7-12cm | Color: Deep Green | Packaging: 4kg/5kg boxes",
     },
     {
       title: "Tomato",
-      image: "https://images.unsplash.com/photo-1604908811484-09c6a91a9973?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/tomato.jpg",
       desc: "Juicy red tomatoes grown in fertile Indian soil, shipped fresh for salads, sauces, and culinary use.",
       specifications: "Size: 55mm+ | Color: Deep Red | Packaging: 5kg/10kg cartons",
     },
     {
       title: "Green Chilli",
-      image: "https://images.unsplash.com/photo-1590080875833-fd4c378a9118?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/greenchili.jpg",
       desc: "Hot and spicy green chillies, freshly harvested and packed to retain pungency.",
       specifications: "Length: 6-10cm | Color: Dark Green | Packaging: 3kg/5kg cartons",
     },
     {
       title: "Bitter Gourd",
-      image: "https://images.unsplash.com/photo-1617196034794-f5f6f7a86c44?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/bittergourd.jpg",
       desc: "Nutrient-rich bitter gourds exported for culinary and medicinal purposes.",
       specifications: "Length: 8-15cm | Color: Dark Green | Packaging: 5kg cartons",
     },
     {
       title: "Bottle Gourd",
-      image: "https://images.unsplash.com/photo-1626075867699-9fdc3f9a0f2d?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/bottlegourd.jpg",
       desc: "Fresh and tender bottle gourds with excellent quality, exported to global markets.",
       specifications: "Length: 20-40cm | Color: Light Green | Packaging: 5kg cartons",
     },
     {
       title: "Drumsticks (Moringa)",
-      image: "https://images.unsplash.com/photo-1633500586576-0e6ac849ce56?auto=format&fit=crop&w=800&q=80",
+      image: "/images/vegetables/drumstick.jpg",
       desc: "Highly nutritious drumsticks, rich in iron and vitamins, exported to Middle East and Europe.",
       specifications: "Length: 30-45cm | Color: Green | Packaging: 5kg/10kg cartons",
     },
@@ -60,10 +60,9 @@ export default function Vegetables() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1587049352847-4c40c3f08f60?auto=format&fit=crop&w=1920&q=80"
+          src="/images/vegetables/herovegetables.jpg"
           alt="Indian Fresh Vegetables Export"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -83,8 +82,6 @@ export default function Vegetables() {
           </motion.div>
         </div>
       </section>
-
-      {/* Vegetables Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -131,9 +128,6 @@ export default function Vegetables() {
                       {veg.specifications}
                     </p>
                   </div>
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200">
-                    Get Quote
-                  </button>
                 </div>
               </motion.div>
             ))}

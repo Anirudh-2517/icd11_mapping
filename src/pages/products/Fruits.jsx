@@ -3,46 +3,46 @@ export default function Fruits() {
   const fruitVarieties = [
     {
       title: "Mango",
-      image: "https://images.unsplash.com/photo-1587307351086-366e9e4b2b4a?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/mango.jpg",
       desc: "Premium Indian mangoes (Alphonso, Kesar, Totapuri) famous worldwide for sweetness and aroma.",
       specifications: "Varieties: Alphonso, Kesar, Totapuri | Packaging: 3kg/5kg cartons",
     },{
       title: "Banana",
-      image: "https://images.unsplash.com/photo-1574226516831-e1dff420e12e?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/banana.jpg",
       desc: "Fresh Indian Cavendish bananas with high demand in global markets due to their taste and quality.",
       specifications: "Length: 18-22cm | Packaging: 7kg/13kg cartons",
     },{
       title: "Grapes",
-      image: "https://images.unsplash.com/photo-1615486369514-f06ed2a53768?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/grapes.webp",
       desc: "Seedless green and black grapes from India, exported to Europe, Middle East, and Asia.",
       specifications: "Varieties: Thompson Seedless, Black Seedless | Packaging: 4.5kg cartons",
     },{
       title: "Pomegranate",
-      image: "https://images.unsplash.com/photo-1605025183315-57c46a5be4f3?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/pomegranate.jpg",
       desc: "High-quality Bhagwa pomegranates with bright red arils, rich in antioxidants and flavor.",
       specifications: "Variety: Bhagwa | Size: 250-350g | Packaging: 3.5kg cartons",
     },
     {
       title: "Orange",
-      image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/orange.jpg",
       desc: "Juicy Nagpur oranges, famous for their sweetness, taste, and long shelf life.",
       specifications: "Size: 60-80mm | Packaging: 10kg cartons",
     },
     {
       title: "Apple",
-      image: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/apple.webp",
       desc: "Crisp and sweet Indian apples (Shimla & Kashmir) exported across Asia and Middle East.",
       specifications: "Size: 70-90mm | Packaging: 18kg cartons",
     },
     {
       title: "Guava",
-      image: "https://images.unsplash.com/photo-1590583326419-f6a97c8c0b47?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/guava.webp",
       desc: "Fresh Indian guavas rich in Vitamin C, with high demand in Gulf and Asian countries.",
       specifications: "Varieties: White & Pink Guava | Packaging: 5kg cartons",
     },
     {
       title: "Papaya",
-      image: "https://images.unsplash.com/photo-1605026533805-45b0b5d5f4cb?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fruits/papaya.jpg",
       desc: "Fresh Indian papayas, sweet and nutritious, ideal for direct consumption and processing.",
       specifications: "Variety: Red Lady | Size: 800g-1.5kg | Packaging: 10kg cartons",
     },
@@ -53,7 +53,7 @@ export default function Fruits() {
       {/* Hero Section */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1615486369514-f06ed2a53768?auto=format&fit=crop&w=1920&q=80"
+          src="/images/fruits/herofruits.jpg"
           alt="Fresh Indian Fruits Export"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -73,8 +73,6 @@ export default function Fruits() {
           </motion.div>
         </div>
       </section>
-
-      {/* Fruits Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
@@ -121,9 +119,6 @@ export default function Fruits() {
                       {fruit.specifications}
                     </p>
                   </div>
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200">
-                    Get Quote
-                  </button>
                 </div>
               </motion.div>
             ))}
