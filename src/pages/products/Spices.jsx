@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 export default function Spices() {
   const spiceVarieties = [
     { title: "Turmeric", image: "/images/spices/turmeric.jpg", desc: "Indian turmeric with high curcumin content, widely used for culinary and medicinal purposes.", specifications: "Curcumin: 3-5% | Moisture: <10%" },
@@ -16,7 +15,6 @@ export default function Spices() {
     { title: "Asafoetida", image: "/images/spices/asafotida.jpg", desc: "Highly aromatic asafoetida used in Indian cooking and seasoning.", specifications: "Resin Content: 60-70% | Moisture: <10%" },
     { title: "Ginger", image: "/images/spices/ginger.jpg", desc: "Premium dried ginger with strong pungency and aroma.", specifications: "Moisture: <10% | Purity: 99%" }
   ];
-
   return (
     <div className="bg-white">
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">

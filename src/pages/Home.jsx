@@ -3,7 +3,6 @@ import ProductHighlights from "../components/PopularProducts";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CallToAction from "../components/CallToAction";
 import WhyIndianMarket from "../components/WhyIndianMarket"
-
 function Home() {
   return (
     <div className="flex flex-col">
@@ -35,5 +34,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;

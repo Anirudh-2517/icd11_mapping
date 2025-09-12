@@ -47,23 +47,19 @@ export default function Fruits() {
       specifications: "Variety: Red Lady | Size: 800g-1.5kg | Packaging: 10kg cartons",
     },
   ];
-
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <img
           src="/images/fruits/herofruits.jpg"
           alt="Fresh Indian Fruits Export"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+          className="absolute inset-0 w-full h-full object-cover"/>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+            transition={{ duration: 0.8 }}>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Fresh Indian Fruits
             </h1>
@@ -80,15 +76,13 @@ export default function Fruits() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+            className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Fruit Products</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               India is one of the largest fruit producers in the world. At Numa Agri Prime, 
               we bring premium quality fruits directly from farms to global markets.
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {fruitVarieties.map((fruit, idx) => (
               <motion.div
@@ -97,14 +91,12 @@ export default function Fruits() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
-              >
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
                 <div className="relative overflow-hidden h-48">
                   <img
                     src={fruit.image}
                     alt={fruit.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"/>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>
                 <div className="p-6">

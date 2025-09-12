@@ -29,7 +29,7 @@ const categories = [
     name: "Fruits",
     path: "/products/fruits",
     img: "/images/fruits/herofruits.jpg",
-    desc: "Fresh seasonal fruits — mangoes, bananas, apples and more — carefully sorted and packed for export."
+    desc: "Fresh seasonal fruits — mangoes, bananas, apples and more — carefully sorted and packed for export.",
   },
   {
     name: "Dry Fruits",
@@ -47,31 +47,33 @@ const categories = [
 
 export default function Products() {
   return (
-    <div className="bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="text-4xl font-bold text-green-700 mb-12 text-center">
+    <section className="bg-gray-50 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-3xl sm:text-5xl font-bold text-green-700 mb-10 sm:mb-12 text-center">
           Our Product Categories
         </h1>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
           {categories.map((cat) => (
             <Link
               key={cat.name}
               to={cat.path}
-              className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all bg-white"
+              aria-label={`View ${cat.name}`}
+              className="group flex flex-col h-full rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all bg-white"
             >
-              <div className="relative h-64">
+              <div className="relative h-48 sm:h-60 md:h-72 lg:h-80">
                 <img
                   src={cat.img}
                   alt={cat.name}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
-                <h2 className="absolute bottom-5 left-5 text-white text-2xl font-semibold drop-shadow-lg">
+                <h2 className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 text-white text-xl sm:text-2xl font-semibold drop-shadow-lg">
                   {cat.name}
                 </h2>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 text-sm leading-relaxed">
+              <div className="p-4 sm:p-6 flex-1 flex items-center">
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                   {cat.desc}
                 </p>
               </div>
@@ -79,6 +81,6 @@ export default function Products() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

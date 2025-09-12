@@ -143,29 +143,6 @@ function Blog() {
             </article>
           ))}
         </div>
-
-        {/* Load More Button */}
-        <div className="text-center mt-12">
-          <button className="bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg">
-            Load More Articles
-          </button>
-        </div>
-
-        {/* Newsletter Subscription */}
-        <div className="mt-16 bg-gradient-to-r from-green-700 to-green-800 rounded-xl p-8 text-center text-white">
-          <h3 className="text-2xl font-bold mb-4">Stay Updated with Latest Agricultural Insights</h3>
-          <p className="mb-6 text-green-100">Subscribe to our newsletter for the latest updates on agriculture, exports, and market trends.</p>
-          <div className="flex gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-300"
-            />
-            <button className="bg-white text-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

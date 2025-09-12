@@ -10,9 +10,8 @@ const products = [
   { name: "Kidney Beans", image: "/images/products/kidney-beans.jpg" },
   { name: "Black Eyed Beans", image: "/images/products/black-eyed-beans.jpg" },
   { name: "Coriander Seeds", image: "/images/products/coriander.jpg" },
-  { name: "Cumin Seeds", image: "/images/products/cumin.jpg" },
+  { name: "Cumin Seeds", image: "/images/products/cumin.jpg" }
 ];
-
 function PopularProducts() {
   return (
     <section className="py-14 bg-gray-50">
@@ -25,15 +24,14 @@ function PopularProducts() {
           spaceBetween={20}
           slidesPerView={4}
           navigation
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          loop
           breakpoints={{
             320: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 4 },
+            1024: { slidesPerView: 4 }
           }}
-          className="pb-10"
-        >
+          className="pb-10">
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
@@ -55,5 +53,4 @@ function PopularProducts() {
     </section>
   );
 }
-
 export default PopularProducts;

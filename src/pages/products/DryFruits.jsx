@@ -66,7 +66,6 @@ export default function DryFruits() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <section className="relative h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <img
           src="/images/dryfruits/herodryfruits.jpg"
@@ -89,8 +88,6 @@ export default function DryFruits() {
           </motion.div>
         </div>
       </section>
-
-      {/* Dry Fruits Grid */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
