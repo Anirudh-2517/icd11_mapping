@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FileSearch, AlertTriangle, CheckCircle, Info, Download, RefreshCw, Filter } from "lucide-react";
-import api from "../../services/api";
+import { getLogs } from "../../services/api";
 
 const LOG_TYPES = {
   error: { icon: AlertTriangle, style: "text-red-500 bg-red-50 border-red-200" },
@@ -22,7 +22,7 @@ const Logs = () => {
   const fetchLogs = async () => {
     setLoading(true);
     try {
-      const res = await api.get("/logs");
+      const res = await getLogs();
       setLogs(res.data || [
         { _id: 1, type: 'success', message: 'User login successful', date: '2023-10-28 10:30:15', service: 'auth' },
         { _id: 2, type: 'error', message: 'Database connection failed', date: '2023-10-28 10:29:00', service: 'database' },
@@ -39,7 +39,7 @@ const Logs = () => {
   const filteredLogs = logs.filter(log => {
     const matchesFilter = filter === 'all' || log.type === filter;
     const matchesSearch = log.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         log.service.toLowerCase().includes(searchTerm.toLowerCase());
+      log.service.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesFilter && matchesSearch;
   });
 

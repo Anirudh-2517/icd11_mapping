@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all knowledge entries from MongoDB
 router.get('/', async (req, res) => {
+    console.log("kelya")
     try {
         const collection = mongoose.connection.db.collection('knowledge');
         console.log('📡 Fetching data from knowledge collection...');

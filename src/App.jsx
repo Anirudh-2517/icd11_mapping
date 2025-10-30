@@ -1,57 +1,56 @@
-import React, { useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
+// src/App.jsx
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import DoctorDashboard from "./pages/DoctorDashboard";
 import ResearcherDashboard from "./pages/ResearcherDashboard";
 
-const ProtectedRoute = ({ children, roles }) => {
-  const { user, isAuthenticated } = useContext(AuthContext);
-  
-  if (!isAuthenticated()) {
-    return <Navigate to="/login" />;
-  }
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
 
-  if (roles && !roles.includes(user.role)) {
-    return <Navigate to="/login" />;
-  }
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUserData(JSON.parse(storedUser));
+      setIsLoggedIn(true);
+    }
+  }, []);
 
-  return children;
-};
-
-const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route 
-          path="/admin-dashboard" 
-          element={
-            <ProtectedRoute roles={["admin"]}>
-              <AdminDashboard />
-            </ProtectedRoute>
-          } 
+        <Route
+          path="/login"
+          element={<Login setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />}
         />
-        <Route 
-          path="/doctor-dashboard" 
+
+        <Route
+          path="/"
           element={
-            <ProtectedRoute roles={["doctor"]}>
-              <DoctorDashboard />
-            </ProtectedRoute>
-          } 
+            isLoggedIn ? (
+              userData?.role === "admin" ? (
+                <Navigate to="/admin-dashboard" />
+              ) : userData?.role === "doctor" ? (
+                <Navigate to="/doctor-dashboard" />
+              ) : userData?.role === "researcher" ? (
+                <Navigate to="/researcher-dashboard" />
+              ) : (
+                <Navigate to="/login" />
+              )
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
-        <Route 
-          path="/researcher-dashboard" 
-          element={
-            <ProtectedRoute roles={["researcher"]}>
-              <ResearcherDashboard />
-            </ProtectedRoute>
-          } 
-        />
+
+        <Route path="/admin-dashboard" element={<AdminDashboard setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/doctor-dashboard" element={<DoctorDashboard setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/researcher-dashboard" element={<ResearcherDashboard setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
     </Router>
   );
-};
+}
+
 export default App;

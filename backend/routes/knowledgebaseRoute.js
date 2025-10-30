@@ -5,6 +5,7 @@ const router = express.Router();
 
 // Get all knowledge base entries
 router.get('/list', async (req, res) => {
+  console.log("maashya")
   try {
     const collection = mongoose.connection.db.collection('knowledge');
     console.log('📡 Fetching data from knowledge collection...');

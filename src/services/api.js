@@ -1,53 +1,57 @@
+// frontend/src/services/api.js
 import axios from "axios";
 
 const api = axios.create({
   baseURL: "http://localhost:5000/api",
-  timeout: 20000
+  timeout: 20000,
 });
 
-// Add auth token to all requests
-api.interceptors.request.use((config) => {
-  const user = JSON.parse(localStorage.getItem('user') || '{}');
-  if (user.token) {
-    config.headers['Authorization'] = `Bearer ${user.token}`;
-  }
-  return config;
-}, (error) => {
-  return Promise.reject(error);
-});
+// ✅ Add Authorization token to requests
+api.interceptors.request.use(
+  (config) => {
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    if (user.token) {
+      config.headers["Authorization"] = `Bearer ${user.token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
-// Handle auth errors
+// ✅ Handle unauthorized errors globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+      localStorage.removeItem("user");
+      window.location.href = "/login";
     }
     return Promise.reject(error);
   }
 );
 
-// Auth endpoints
-export const loginUser = (credentials) => api.post('/auth/login', credentials);
-export const registerUser = (userData) => api.post('/auth/register', userData);
+// === AUTH ===
+export const loginUser = (credentials) => api.post("/auth/login", credentials);
+export const registerUser = (data) => api.post("/auth/register", data);
 
-// User endpoints
-export const getUsers = () => api.get('/users');
-export const toggleUserStatus = (userId) => api.put(`/users/${userId}/toggle`);
+// === USERS ===
+export const getUsers = () => api.get("/users");
+export const toggleUserStatus = (id) => api.put(`/users/${id}/toggle`);
 
-// Research endpoints
-export const getResearchData = () => api.get('/research/data');
+// === KNOWLEDGE ===
+export const getKnowledge = () => api.get("/knowledge");
 
-// Analytics endpoints
-export const getAnalytics = () => api.get('/analytics');
-export const getReportsSummary = () => api.get('/admin/reports/summary');
+// === ANALYTICS ===
+export const getAnalytics = () => api.get("/analytics");
+export const getReportsSummary = () => api.get("/admin/reports/summary");
 
-// Logs endpoints
-export const getLogs = () => api.get('/logs');
+// === LOGS ===
+export const getLogs = (params = {}) => api.get("/logs", { params });
+export const getLogStats = () => api.get("/logs/stats");
+export const clearOldLogs = () => api.delete("/logs/clear");
 
-// Feedback endpoints
-export const getFeedback = () => api.get('/feedback');
-export const createFeedback = (data) => api.post('/feedback', data);
+// === FEEDBACK ===
+export const getFeedback = () => api.get("/feedback");
+export const createFeedback = (data) => api.post("/feedback", data);
 
 export default api;
