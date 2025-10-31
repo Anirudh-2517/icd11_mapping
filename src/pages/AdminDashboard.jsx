@@ -19,7 +19,7 @@ const AdminDashboard = () => {
     { id: "data-management", label: "Data Management", icon: Database },
     { id: "ai-ml-control", label: "AI/ML Control", icon: Cpu },
     { id: "reports", label: "Reports", icon: FileText },
-    { id: "system-settings", label: "System Settings", icon: Settings },
+    // { id: "system-settings", label: "System Settings", icon: Settings },
     { id: "logs", label: "Logs", icon: FileSearch },
   ];
 
@@ -56,14 +56,14 @@ const AdminDashboard = () => {
       color: "from-sky-500 to-sky-600",
       stats: "Insights"
     },
-    {
-      id: "system-settings",
-      title: "System Settings",
-      description: "Configure system parameters, integrations, and global preferences",
-      icon: Settings,
-      color: "from-violet-500 to-violet-600",
-      stats: "Configure"
-    },
+    // {
+    //   id: "system-settings",
+    //   title: "System Settings",
+    //   description: "Configure system parameters, integrations, and global preferences",
+    //   icon: Settings,
+    //   color: "from-violet-500 to-violet-600",
+    //   stats: "Configure"
+    // },
     {
       id: "logs",
       title: "Logs",

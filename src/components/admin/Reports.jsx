@@ -1,134 +1,208 @@
+// src/pages/Report.jsx
 import React, { useEffect, useState } from "react";
-import { FileText, Users, Database, Activity, AlertTriangle, CheckCircle, RefreshCw, Download } from "lucide-react";
-import api from "../../services/api";
+import axios from "axios";
+import { BarChart3, TrendingUp, Calendar, Tag, RefreshCw, Download, FileText } from "lucide-react";
 
-const Reports = () => {
-  const [summary, setSummary] = useState({});
+const Report = () => {
+  const [analytics, setAnalytics] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchSummary();
+    fetchAnalytics();
   }, []);
 
-  const fetchSummary = async () => {
+  const fetchAnalytics = () => {
     setLoading(true);
-    try {
-      const res = await api.get("/admin/reports/summary");
-      setSummary(res.data || {});
-      setError("");
-    } catch (err) {
-      console.error("Error fetching reports summary:", err);
-      setError("Failed to load reports");
-    } finally {
-      setLoading(false);
-    }
+    axios
+      .get("http://localhost:5000/api/analytics")
+      .then((res) => {
+        setAnalytics(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching analytics:", err);
+        setLoading(false);
+      });
   };
 
-  const downloadReport = () => {
-    // Placeholder: implement export (CSV/PDF) generation on the server
-    alert("Report download functionality will be implemented soon");
+  const getCategoryColor = (category) => {
+    const colors = {
+      performance: "bg-blue-500/20 text-blue-400 border-blue-500/50",
+      users: "bg-green-500/20 text-green-400 border-green-500/50",
+      revenue: "bg-purple-500/20 text-purple-400 border-purple-500/50",
+      engagement: "bg-orange-500/20 text-orange-400 border-orange-500/50",
+      default: "bg-gray-500/20 text-gray-400 border-gray-500/50"
+    };
+    return colors[category?.toLowerCase()] || colors.default;
+  };
+
+  const getTotalValue = () => {
+    return analytics.reduce((sum, item) => sum + (parseFloat(item.value) || 0), 0).toFixed(2);
+  };
+
+  const getUniqueCategories = () => {
+    return [...new Set(analytics.map(a => a.category))].length;
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-sky-700 flex items-center gap-2">
-          <FileText className="w-8 h-8" />
-          Reports & Analytics
-        </h2>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="p-2 bg-blue-600/20 rounded-lg">
+              <BarChart3 className="w-6 h-6 text-blue-400" />
+            </div>
+            <h1 className="text-3xl font-bold text-white">Analytics Report</h1>
+          </div>
+          <p className="text-gray-400">Comprehensive overview of system metrics and performance</p>
+        </div>
 
-        <div className="flex gap-2">
-          <button
-            onClick={fetchSummary}
-            className="bg-sky-100 text-sky-600 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-sky-200 transition-colors"
-          >
-            <RefreshCw className="w-4 h-4" />
-            Refresh
-          </button>
+        {/* Stats Cards */}
+        {!loading && analytics.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-sm rounded-xl border border-blue-500/30 p-6 shadow-lg">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-blue-300 text-sm font-medium mb-1">Total Metrics</p>
+                  <p className="text-3xl font-bold text-white">{analytics.length}</p>
+                </div>
+                <div className="p-3 bg-blue-500/20 rounded-lg">
+                  <FileText className="w-6 h-6 text-blue-400" />
+                </div>
+              </div>
+            </div>
 
-          <button
-            onClick={downloadReport}
-            className="bg-sky-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-sky-600 transition-colors"
-          >
-            <Download className="w-4 h-4" />
-            Export
-          </button>
+            <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6 shadow-lg">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-purple-300 text-sm font-medium mb-1">Categories</p>
+                  <p className="text-3xl font-bold text-white">{getUniqueCategories()}</p>
+                </div>
+                <div className="p-3 bg-purple-500/20 rounded-lg">
+                  <Tag className="w-6 h-6 text-purple-400" />
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-600/20 to-green-800/20 backdrop-blur-sm rounded-xl border border-green-500/30 p-6 shadow-lg">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-green-300 text-sm font-medium mb-1">Total Value</p>
+                  <p className="text-3xl font-bold text-white">{getTotalValue()}</p>
+                </div>
+                <div className="p-3 bg-green-500/20 rounded-lg">
+                  <TrendingUp className="w-6 h-6 text-green-400" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Controls Bar */}
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 p-4 mb-6 shadow-lg">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div className="flex items-center gap-2 text-gray-400">
+              <Calendar className="w-5 h-5" />
+              <span className="text-sm">Last updated: {new Date().toLocaleString()}</span>
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                onClick={fetchAnalytics}
+                className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                <RefreshCw className="w-4 h-4" />
+                <span className="hidden sm:inline">Refresh</span>
+              </button>
+              <button
+                className="flex items-center gap-2 px-4 py-2.5 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                <Download className="w-4 h-4" />
+                <span className="hidden sm:inline">Export</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Table Container */}
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-lg overflow-hidden">
+          {loading ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="flex flex-col items-center gap-3">
+                <RefreshCw className="w-8 h-8 text-blue-500 animate-spin" />
+                <p className="text-gray-400">Loading analytics data...</p>
+              </div>
+            </div>
+          ) : analytics.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-20 px-4">
+              <div className="p-4 bg-gray-700/30 rounded-full mb-4">
+                <BarChart3 className="w-12 h-12 text-gray-500" />
+              </div>
+              <p className="text-xl font-semibold text-gray-300 mb-2">No analytics data found</p>
+              <p className="text-gray-500 text-center">Analytics data will appear here once available</p>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-900/50 border-b border-gray-700">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Metric
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Value
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Category
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-700/50">
+                  {analytics.map((a) => (
+                    <tr
+                      key={a._id}
+                      className="hover:bg-gray-700/30 transition-colors duration-150"
+                    >
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-blue-500/20 rounded-lg">
+                            <TrendingUp className="w-4 h-4 text-blue-400" />
+                          </div>
+                          <span className="text-gray-200 font-medium">
+                            {a.metric_name}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className="text-2xl font-bold text-white">
+                          {a.value}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getCategoryColor(a.category)}`}>
+                          {a.category}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center gap-2 text-gray-400">
+                          <Calendar className="w-4 h-4" />
+                          <span>{new Date(a.date).toLocaleDateString()}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </div>
-
-      {error && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
-          <AlertTriangle className="w-5 h-5" />
-          {error}
-        </div>
-      )}
-
-      {loading ? (
-        <div className="text-center py-8 text-gray-500">
-          <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2" />
-          Loading reports...
-        </div>
-      ) : (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-gray-600">Total Users</p>
-                  <p className="text-2xl font-bold text-sky-600">{summary.totalUsers || 0}</p>
-                </div>
-                <Users className="w-8 h-8 text-sky-500" />
-              </div>
-              <p className="text-xs text-green-600 mt-2">Active: {summary.activeUsers || 0}</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-gray-600">Total Diseases</p>
-                  <p className="text-2xl font-bold text-amber-600">{summary.totalDiseases || 0}</p>
-                </div>
-                <Database className="w-8 h-8 text-amber-500" />
-              </div>
-              <p className="text-xs text-gray-600 mt-2">Records in database</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-gray-600">System Logs</p>
-                  <p className="text-2xl font-bold text-violet-600">{summary.totalLogs || 0}</p>
-                </div>
-                <Activity className="w-8 h-8 text-violet-500" />
-              </div>
-              <p className="text-xs text-violet-600 mt-2">Last week: {summary.lastWeekLogs || 0}</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-gray-600">System Status</p>
-                  <p className="text-2xl font-bold text-emerald-600">Healthy</p>
-                </div>
-                <CheckCircle className="w-8 h-8 text-emerald-500" />
-              </div>
-              <p className="text-xs text-gray-600 mt-2">All systems operational</p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-            <div className="p-4 border-b border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-800">Recent Activity</h3>
-            </div>
-            <div className="p-4">
-              <p className="text-gray-500 text-center">Activity timeline will be implemented soon</p>
-            </div>
-          </div>
-        </>
-      )}
     </div>
   );
 };
 
-export default Reports;
+export default Report;

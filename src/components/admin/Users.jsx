@@ -38,9 +38,14 @@ const Users = () => {
   const filteredUsers = users.filter(user => {
     const matchesSearch = user.name?.toLowerCase().includes(search.toLowerCase()) ||
                          user.email?.toLowerCase().includes(search.toLowerCase());
+    
+    // Check both user.status and user.active for compatibility
+    const isActive = user.status === "active" || user.active === true;
+    const isInactive = user.status === "inactive" || user.active === false;
+    
     const matchesFilter = filter === "all" || 
-                         (filter === "active" && user.active) ||
-                         (filter === "blocked" && !user.active);
+                         (filter === "active" && isActive) ||
+                         (filter === "blocked" && isInactive);
     return matchesSearch && matchesFilter;
   });
 
@@ -110,58 +115,63 @@ const Users = () => {
                   <td colSpan="4" className="text-center py-4 text-gray-500">No users found</td>
                 </tr>
               ) : (
-                filteredUsers.map((user, index) => (
-                  <tr key={user._id || index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-white font-medium">
-                          {user.name?.[0]?.toUpperCase() || "U"}
+                filteredUsers.map((user, index) => {
+                  // Determine if user is active based on available properties
+                  const isActive = user.status === "active" || user.active === true;
+                  
+                  return (
+                    <tr key={user._id || index} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-white font-medium">
+                            {user.name?.[0]?.toUpperCase() || "U"}
+                          </div>
+                          <div className="ml-4">
+                            <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                            <div className="text-sm text-gray-500">{user.email}</div>
+                          </div>
                         </div>
-                        <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                          <div className="text-sm text-gray-500">{user.email}</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
-                        {user.role || "User"}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-full ${
-                        user.status === "active"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-red-100 text-red-800"
-                      }`}>
-                        {user.status === "active" ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
-                        {user.status === "active" ? "Active" : "Inactive"}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <button
-                        onClick={() => toggleStatus(user._id)}
-                        className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-white ${
-                          user.status === "active"
-                            ? "bg-rose-500 hover:bg-rose-600"
-                            : "bg-emerald-500 hover:bg-emerald-600"
-                        } transition-colors`}
-                      >
-                        {user.status === "active" ? (
-                          <>
-                            <XCircle className="w-4 h-4" />
-                            Deactivate
-                          </>
-                        ) : (
-                          <>
-                            <CheckCircle className="w-4 h-4" />
-                            Activate
-                          </>
-                        )}
-                      </button>
-                    </td>
-                  </tr>
-                ))
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">
+                          {user.role || "User"}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold rounded-full ${
+                          isActive
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
+                        }`}>
+                          {isActive ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+                          {isActive ? "Active" : "Inactive"}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button
+                          onClick={() => toggleStatus(user._id)}
+                          className={`inline-flex items-center gap-1 px-3 py-1 rounded-lg text-white ${
+                            isActive
+                              ? "bg-rose-500 hover:bg-rose-600"
+                              : "bg-emerald-500 hover:bg-emerald-600"
+                          } transition-colors`}
+                        >
+                          {isActive ? (
+                            <>
+                              <XCircle className="w-4 h-4" />
+                              Deactivate
+                            </>
+                          ) : (
+                            <>
+                              <CheckCircle className="w-4 h-4" />
+                              Activate
+                            </>
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>

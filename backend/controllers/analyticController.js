@@ -1,32 +1,32 @@
-const Analytics = require('../models/analyticModel');
+// backend/controllers/analyticController.js
+import Analytics from "../models/analyticModel.js";
 
-// Get all analytics
-exports.getAnalytics = async (req, res) => {
+export const getAnalytics = async (req, res) => {
   try {
     const analytics = await Analytics.find();
-    res.json(analytics);
+    res.status(200).json(analytics);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: "Error fetching analytics", error });
   }
 };
 
-// Create new analytic
-exports.createAnalytic = async (req, res) => {
-  const analytic = new Analytics(req.body);
+export const createAnalytic = async (req, res) => {
   try {
-    const newAnalytic = await analytic.save();
-    res.status(201).json(newAnalytic);
+    const { metric_name, value, category } = req.body;
+    const analytic = new Analytics({ metric_name, value, category });
+    await analytic.save();
+    res.status(201).json(analytic);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: "Error creating analytic", error });
   }
 };
 
-// Get analytics by category
-exports.getAnalyticsByCategory = async (req, res) => {
+export const getAnalyticsByCategory = async (req, res) => {
   try {
-    const analytics = await Analytics.find({ category: req.params.category });
-    res.json(analytics);
+    const { category } = req.params;
+    const analytics = await Analytics.find({ category });
+    res.status(200).json(analytics);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: "Error fetching category analytics", error });
   }
 };

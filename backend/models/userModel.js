@@ -1,3 +1,4 @@
+// backend/models/userModel.js
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
@@ -13,11 +14,16 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
     specialization: { type: String },
+    status: {
+      type: String,
+      enum: ["active", "inactive"],
+      default: "active"
+    }
   },
-  { timestamps: true } // optional but useful
+  { timestamps: true }
 );
 
-// ✅ Automatically hash password before saving
+// Automatically hash password before saving
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
 

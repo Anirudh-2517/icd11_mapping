@@ -1,76 +1,74 @@
+// backend/routes/aiRoutes.js
 import express from "express";
-import Log from "../models/logModel.js";
+import { spawn } from "child_process";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const router = express.Router();
 
-// Start model training
-router.post("/train", async (req, res) => {
-  try {
-    // Log the training start
-    await new Log({
-      type: "info",
-      message: "AI model training started",
-      service: "ai-training"
-    }).save();
+// Define correct file paths
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const trainScript = path.join(__dirname, "../ml/train_model.py");
+const predictScript = path.join(__dirname, "../ml/predict_model.py");
 
-    // In a real application, you would initiate your ML training pipeline here
-    // This is a mock response for demonstration
-    res.json({ 
-      message: "Training started successfully!",
-      estimatedTime: "30 minutes"
-    });
-  } catch (error) {
-    await new Log({
-      type: "error",
-      message: `AI training error: ${error.message}`,
-      service: "ai-training"
-    }).save();
-    
-    res.status(500).json({ message: error.message });
-  }
+// 🧠 TRAIN MODEL — runs Python script train_model.py
+router.post("/train", (req, res) => {
+  console.log("🚀 Training model...");
+  const pythonProcess = spawn("python", [trainScript]);
+
+  pythonProcess.stdout.on("data", (data) => {
+    console.log(`📘 Python: ${data}`);
+  });
+
+  pythonProcess.stderr.on("data", (data) => {
+    console.error(`⚠️ Python Error: ${data}`);
+  });
+
+  pythonProcess.on("close", (code) => {
+    console.log(`✅ Python training exited with code ${code}`);
+    if (code === 0) {
+      res.json({ message: "Training complete ✅" });
+    } else {
+      res.status(500).json({ error: "Training failed ❌" });
+    }
+  });
+
+  pythonProcess.on("error", (err) => {
+    console.error("🚨 Failed to start Python process:", err);
+    res.status(500).json({ error: "Python process error" });
+  });
 });
 
-// Generate predictions
-router.post("/predict", async (req, res) => {
-  try {
-    // Log the prediction request
-    await new Log({
-      type: "info",
-      message: "Prediction request received",
-      service: "ai-prediction"
-    }).save();
+// 🧩 PREDICT endpoint — calls predict_model.py
+router.post("/predict", (req, res) => {
+  console.log("🔮 Predicting...");
+  const inputData = JSON.stringify(req.body);
+  const pythonProcess = spawn("python", [predictScript, inputData]);
 
-    // In a real application, you would run your prediction model here
-    // This is a mock response for demonstration
-    res.json({ 
-      message: "Predictions generated successfully!",
-      results: {
-        accuracy: "89%",
-        processedItems: 150
-      }
-    });
-  } catch (error) {
-    await new Log({
-      type: "error",
-      message: `Prediction error: ${error.message}`,
-      service: "ai-prediction"
-    }).save();
-    
-    res.status(500).json({ message: error.message });
-  }
-});
+  let result = "";
 
-// Get model status
-router.get("/status", async (req, res) => {
-  try {
-    // In a real application, you would check your ML model's status
-    res.json({
-      status: "ready",
-      lastTraining: new Date().toISOString(),
-      version: "1.0.0"
-    });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
+  pythonProcess.stdout.on("data", (data) => {
+    result += data.toString();
+  });
+
+  pythonProcess.stderr.on("data", (data) => {
+    console.error(`⚠️ Python Error: ${data}`);
+  });
+
+  pythonProcess.on("close", (code) => {
+    console.log(`✅ Python prediction exited with code ${code}`);
+    try {
+      res.json(JSON.parse(result));
+    } catch (e) {
+      res.status(500).json({ error: "Failed to parse model output" });
+    }
+  });
+
+  pythonProcess.on("error", (err) => {
+    console.error("🚨 Failed to start Python process:", err);
+    res.status(500).json({ error: "Python process error" });
+  });
 });
 
 export default router;

@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FileSearch, AlertTriangle, CheckCircle, Info, Download, RefreshCw, Filter } from "lucide-react";
 import { getLogs } from "../../services/api";
-
-const LOG_TYPES = {
-  error: { icon: AlertTriangle, style: "text-red-500 bg-red-50 border-red-200" },
-  warning: { icon: AlertTriangle, style: "text-yellow-500 bg-yellow-50 border-yellow-200" },
-  info: { icon: Info, style: "text-blue-500 bg-blue-50 border-blue-200" },
-  success: { icon: CheckCircle, style: "text-green-500 bg-green-50 border-green-200" }
-};
+import { Search, Filter, Download, RefreshCw } from "lucide-react";
 
 const Logs = () => {
   const [logs, setLogs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchLogs();
@@ -22,140 +14,162 @@ const Logs = () => {
   const fetchLogs = async () => {
     setLoading(true);
     try {
-      const res = await getLogs();
-      setLogs(res.data || [
-        { _id: 1, type: 'success', message: 'User login successful', date: '2023-10-28 10:30:15', service: 'auth' },
-        { _id: 2, type: 'error', message: 'Database connection failed', date: '2023-10-28 10:29:00', service: 'database' },
-        { _id: 3, type: 'warning', message: 'High memory usage detected', date: '2023-10-28 10:28:45', service: 'system' },
-        { _id: 4, type: 'info', message: 'Backup process started', date: '2023-10-28 10:28:30', service: 'backup' }
-      ]);
+      const { data } = await getLogs();
+      setLogs(data);
     } catch (error) {
-      console.error('Error fetching logs:', error);
+      console.error("Error fetching logs:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  const filteredLogs = logs.filter(log => {
-    const matchesFilter = filter === 'all' || log.type === filter;
-    const matchesSearch = log.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      log.service.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesFilter && matchesSearch;
+  const filteredLogs = logs.filter((log) => {
+    const safeSearch = searchTerm.toLowerCase();
+    return (
+      (log.user_id?.toLowerCase() || "").includes(safeSearch) ||
+      (log.action?.toLowerCase() || "").includes(safeSearch) ||
+      (log.status?.toLowerCase() || "").includes(safeSearch) ||
+      (log.service?.toLowerCase() || "").includes(safeSearch)
+    );
   });
 
-  const downloadLogs = () => {
-    const csvContent = filteredLogs
-      .map(log => `${log.date},${log.type},${log.service},"${log.message}"`)
-      .join('\n');
-    const blob = new Blob([`Date,Type,Service,Message\n${csvContent}`], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'system_logs.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
+  const getStatusBadge = (status) => {
+    const styles = {
+      success: "bg-green-500/20 text-green-400 border-green-500/50",
+      failed: "bg-red-500/20 text-red-400 border-red-500/50",
+      default: "bg-yellow-500/20 text-yellow-400 border-yellow-500/50"
+    };
+
+    const style = status === "success" ? styles.success : 
+                  status === "failed" ? styles.failed : 
+                  styles.default;
+
+    return (
+      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${style}`}>
+        {status || "Unknown"}
+      </span>
+    );
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-orange-700 flex items-center gap-2">
-          <FileSearch className="w-8 h-8" />
-          System Logs
-        </h2>
-        <div className="flex gap-2">
-          <button
-            onClick={fetchLogs}
-            className="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg flex items-center gap-1 hover:bg-gray-200 transition-colors"
-          >
-            <RefreshCw className="w-4 h-4" />
-            Refresh
-          </button>
-          <button
-            onClick={downloadLogs}
-            className="bg-orange-500 text-white px-3 py-2 rounded-lg flex items-center gap-1 hover:bg-orange-600 transition-colors"
-          >
-            <Download className="w-4 h-4" />
-            Export CSV
-          </button>
-        </div>
-      </div>
-
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
-        <div className="p-4 border-b border-gray-200 flex gap-4 flex-wrap">
-          <div className="flex-1 min-w-[200px]">
-            <input
-              type="text"
-              placeholder="Search logs..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <Filter className="text-gray-400 w-5 h-5" />
-            <select
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
-            >
-              <option value="all">All Logs</option>
-              <option value="error">Errors</option>
-              <option value="warning">Warnings</option>
-              <option value="info">Info</option>
-              <option value="success">Success</option>
-            </select>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-white mb-2">System Logs</h1>
+          <p className="text-gray-400">Monitor and track system activities</p>
         </div>
 
-        <div className="overflow-x-auto">
-          {loading ? (
-            <div className="text-center py-8 text-gray-500">
-              <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2" />
-              Loading logs...
+        {/* Controls Bar */}
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 p-4 mb-6 shadow-lg">
+          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+            {/* Search Input */}
+            <div className="relative flex-1 w-full md:max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search by user, action, status..."
+                className="w-full pl-10 pr-4 py-2.5 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
-          ) : filteredLogs.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              No logs found matching your criteria
+
+            {/* Action Buttons */}
+            <div className="flex gap-2">
+              <button
+                onClick={fetchLogs}
+                className="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                <RefreshCw className="w-4 h-4" />
+                <span className="hidden sm:inline">Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-4 pt-4 border-t border-gray-700/50">
+            <div className="flex gap-6 text-sm">
+              <div className="text-gray-400">
+                Total: <span className="text-white font-semibold">{logs.length}</span>
+              </div>
+              <div className="text-gray-400">
+                Filtered: <span className="text-white font-semibold">{filteredLogs.length}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Table Container */}
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 shadow-lg overflow-hidden">
+          {loading ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="flex flex-col items-center gap-3">
+                <RefreshCw className="w-8 h-8 text-blue-500 animate-spin" />
+                <p className="text-gray-400">Loading logs...</p>
+              </div>
             </div>
           ) : (
-            <table className="min-w-full">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Time</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Type</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Service</th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Message</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {filteredLogs.map((log) => {
-                  const logType = LOG_TYPES[log.type] || LOG_TYPES.info;
-                  const Icon = logType.icon;
-                  return (
-                    <tr key={log._id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {log.date}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded-full ${logType.style}`}>
-                          <Icon className="w-4 h-4" />
-                          {log.type}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {log.service}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-900">
-                        {log.message}
+            <div className="overflow-x-auto">
+              <table className="min-w-full">
+                <thead className="bg-gray-900/50 border-b border-gray-700">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      User ID
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Action
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-300 uppercase tracking-wider">
+                      Date & Time
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-700/50">
+                  {filteredLogs.length > 0 ? (
+                    filteredLogs.map((log, index) => (
+                      <tr
+                        key={log._id || index}
+                        className="hover:bg-gray-700/30 transition-colors duration-150"
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="flex items-center">
+                            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-sm font-semibold mr-3">
+                              {(log.user_id || "?")[0].toUpperCase()}
+                            </div>
+                            <span className="text-gray-200 font-medium">
+                              {log.user_id || "N/A"}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="text-gray-300">{log.action || "N/A"}</span>
+                        </td>
+                        <td className="px-6 py-4">
+                          {getStatusBadge(log.status)}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-400">
+                          {log.date ? new Date(log.date).toLocaleString() : "N/A"}
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="px-6 py-12">
+                        <div className="flex flex-col items-center justify-center text-gray-500">
+                          <Filter className="w-12 h-12 mb-3 opacity-50" />
+                          <p className="text-lg font-medium">No logs found</p>
+                          <p className="text-sm mt-1">Try adjusting your search criteria</p>
+                        </div>
                       </td>
                     </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                  )}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
       </div>

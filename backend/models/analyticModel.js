@@ -1,22 +1,11 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const analyticSchema = new mongoose.Schema({
-  metric_name: {
-    type: String,
-    required: true
-  },
-  value: {
-    type: Number,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  },
-  category: {
-    type: String,
-    required: true
-  }
+  metric_name: { type: String, required: true },
+  value: { type: Number, required: true },
+  category: { type: String, required: true },
+  date: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Analytics', analyticSchema);
+const Analytics = mongoose.model("Analytics", analyticSchema);
+export default Analytics;

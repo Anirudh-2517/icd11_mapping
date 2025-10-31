@@ -1,11 +1,15 @@
-const express = require('express');
+// backend/routes/analyticRoutes.js
+import express from "express";
+import {
+  getAnalytics,
+  createAnalytic,
+  getAnalyticsByCategory,
+} from "../controllers/analyticController.js";
+
 const router = express.Router();
-const analyticController = require('../controllers/analyticController');
-const { protect, admin } = require('../middleware/authMiddleware');
 
-// Routes
-router.get('/', protect, analyticController.getAnalytics);
-router.post('/', protect, admin, analyticController.createAnalytic);
-router.get('/category/:category', protect, analyticController.getAnalyticsByCategory);
+router.get("/", getAnalytics);
+router.post("/", createAnalytic);
+router.get("/category/:category", getAnalyticsByCategory);
 
-module.exports = router;
+export default router;

@@ -1,3 +1,4 @@
+// backend/models/logModel.js
 import mongoose from "mongoose";
 
 const logSchema = new mongoose.Schema({
@@ -5,10 +6,11 @@ const logSchema = new mongoose.Schema({
   user_id: String,
   action: String,
   date: { type: Date, default: Date.now },
-  status: String
+  status: String,
+  type: { type: String, default: "info" },
+  service: { type: String, default: "system" },
+  message: { type: String, default: "" }
 });
 
-// ✅ Correct model name (singular) — maps automatically to "logs" collection
-const Log = mongoose.model("Log", logSchema);
-
+const Log = mongoose.model("logs", logSchema); // ✅ collection name must be "logs"
 export default Log;

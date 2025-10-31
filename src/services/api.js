@@ -45,6 +45,12 @@ export const getKnowledge = () => api.get("/knowledge");
 export const getAnalytics = () => api.get("/analytics");
 export const getReportsSummary = () => api.get("/admin/reports/summary");
 
+// === RESEARCH MODELS ===
+export const getResearchModels = () => api.get("/research-models");
+export const createResearchModel = (data) => api.post("/research-models", data);
+export const deleteResearchModel = (id) => api.delete(`/research-models/${id}`);
+export const updateResearchModel = (id, data) => api.put(`/research-models/${id}`, data);
+
 // === LOGS ===
 export const getLogs = (params = {}) => api.get("/logs", { params });
 export const getLogStats = () => api.get("/logs/stats");

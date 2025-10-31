@@ -1,0 +1,501 @@
+code,name,definition,icd_tm2,icd_biomed,ayush_system
+A001,Asthma,A common viral infection causing fever and weakness.,TM2_042,BIO_054,Siddha
+A002,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_085,BIO_013,Ayurveda
+A003,Cough,A chronic disease affecting the respiratory system.,TM2_024,BIO_008,Unani
+A004,Anemia,A respiratory condition marked by coughing and irritation.,TM2_045,BIO_015,Siddha
+A005,Hypertension,A neurological condition causing severe headaches.,TM2_003,BIO_013,Unani
+A006,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_095,BIO_083,Unani
+A007,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_002,BIO_097,Unani
+A008,Fever,A common viral infection causing fever and weakness.,TM2_068,BIO_062,Ayurveda
+A009,Fever,Inflammation of airways causing difficulty in breathing.,TM2_081,BIO_040,Yoga
+A010,Asthma,Inflammation of airways causing difficulty in breathing.,TM2_048,BIO_089,Siddha
+A011,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_076,BIO_070,Yoga
+A012,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_038,BIO_073,Homeopathy
+A013,Malaria,A common viral infection causing fever and weakness.,TM2_073,BIO_006,Ayurveda
+A014,Cough,A respiratory condition marked by coughing and irritation.,TM2_068,BIO_002,Unani
+A015,Fever,Deficiency of red blood cells or hemoglobin.,TM2_076,BIO_001,Unani
+A016,Fever,A common viral infection causing fever and weakness.,TM2_034,BIO_071,Yoga
+A017,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_080,BIO_015,Unani
+A018,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_081,BIO_065,Siddha
+A019,Tuberculosis,A condition involving high blood pressure over a long period.,TM2_055,BIO_059,Siddha
+A020,Fever,A neurological condition causing severe headaches.,TM2_024,BIO_033,Siddha
+A021,Hypertension,Parasitic infection spread by mosquitoes.,TM2_100,BIO_086,Ayurveda
+A022,Arthritis,A chronic disease affecting the respiratory system.,TM2_053,BIO_060,Siddha
+A023,Diabetes,A neurological condition causing severe headaches.,TM2_022,BIO_060,Ayurveda
+A024,Malaria,A condition involving high blood pressure over a long period.,TM2_046,BIO_064,Unani
+A025,Hypertension,A condition involving high blood pressure over a long period.,TM2_043,BIO_061,Yoga
+A026,Arthritis,Parasitic infection spread by mosquitoes.,TM2_038,BIO_003,Siddha
+A027,Tuberculosis,A neurological condition causing severe headaches.,TM2_047,BIO_055,Homeopathy
+A028,Hypertension,Inflammation of airways causing difficulty in breathing.,TM2_010,BIO_032,Unani
+A029,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_077,BIO_048,Yoga
+A030,Asthma,A condition involving high blood pressure over a long period.,TM2_012,BIO_016,Ayurveda
+A031,Migraine,A condition involving high blood pressure over a long period.,TM2_096,BIO_048,Yoga
+A032,Arthritis,A metabolic disorder characterized by high blood sugar levels.,TM2_082,BIO_045,Siddha
+A033,Anemia,Deficiency of red blood cells or hemoglobin.,TM2_044,BIO_017,Siddha
+A034,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_069,BIO_011,Ayurveda
+A035,Diabetes,A neurological condition causing severe headaches.,TM2_083,BIO_017,Ayurveda
+A036,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_067,BIO_002,Ayurveda
+A037,Cough,Parasitic infection spread by mosquitoes.,TM2_001,BIO_061,Homeopathy
+A038,Cough,Parasitic infection spread by mosquitoes.,TM2_005,BIO_058,Siddha
+A039,Migraine,A common viral infection causing fever and weakness.,TM2_026,BIO_039,Homeopathy
+A040,Arthritis,Joint inflammation leading to pain and stiffness.,TM2_079,BIO_014,Homeopathy
+A041,Anemia,A common viral infection causing fever and weakness.,TM2_025,BIO_071,Unani
+A042,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_076,BIO_073,Homeopathy
+A043,Arthritis,A condition involving high blood pressure over a long period.,TM2_020,BIO_027,Ayurveda
+A044,Migraine,A common viral infection causing fever and weakness.,TM2_042,BIO_040,Siddha
+A045,Cough,Parasitic infection spread by mosquitoes.,TM2_054,BIO_004,Homeopathy
+A046,Malaria,A common viral infection causing fever and weakness.,TM2_069,BIO_011,Unani
+A047,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_085,BIO_045,Yoga
+A048,Anemia,A common viral infection causing fever and weakness.,TM2_067,BIO_096,Siddha
+A049,Arthritis,Joint inflammation leading to pain and stiffness.,TM2_092,BIO_062,Yoga
+A050,Diabetes,A common viral infection causing fever and weakness.,TM2_016,BIO_028,Homeopathy
+A051,Fever,Inflammation of airways causing difficulty in breathing.,TM2_032,BIO_018,Yoga
+A052,Tuberculosis,Joint inflammation leading to pain and stiffness.,TM2_009,BIO_041,Yoga
+A053,Diabetes,Joint inflammation leading to pain and stiffness.,TM2_003,BIO_013,Ayurveda
+A054,Cough,A respiratory condition marked by coughing and irritation.,TM2_048,BIO_011,Yoga
+A055,Migraine,A respiratory condition marked by coughing and irritation.,TM2_074,BIO_063,Unani
+A056,Malaria,Deficiency of red blood cells or hemoglobin.,TM2_049,BIO_084,Yoga
+A057,Asthma,A common viral infection causing fever and weakness.,TM2_077,BIO_028,Unani
+A058,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_074,BIO_091,Yoga
+A059,Hypertension,A common viral infection causing fever and weakness.,TM2_094,BIO_060,Homeopathy
+A060,Diabetes,A condition involving high blood pressure over a long period.,TM2_021,BIO_001,Yoga
+A061,Hypertension,A respiratory condition marked by coughing and irritation.,TM2_035,BIO_083,Ayurveda
+A062,Arthritis,Parasitic infection spread by mosquitoes.,TM2_094,BIO_034,Homeopathy
+A063,Fever,Joint inflammation leading to pain and stiffness.,TM2_012,BIO_020,Unani
+A064,Migraine,A common viral infection causing fever and weakness.,TM2_089,BIO_091,Siddha
+A065,Fever,A condition involving high blood pressure over a long period.,TM2_096,BIO_082,Siddha
+A066,Anemia,A neurological condition causing severe headaches.,TM2_030,BIO_045,Yoga
+A067,Migraine,A respiratory condition marked by coughing and irritation.,TM2_054,BIO_093,Yoga
+A068,Asthma,A respiratory condition marked by coughing and irritation.,TM2_023,BIO_033,Yoga
+A069,Asthma,A common viral infection causing fever and weakness.,TM2_031,BIO_021,Unani
+A070,Fever,A chronic disease affecting the respiratory system.,TM2_092,BIO_089,Siddha
+A071,Anemia,A condition involving high blood pressure over a long period.,TM2_014,BIO_083,Unani
+A072,Tuberculosis,A common viral infection causing fever and weakness.,TM2_015,BIO_099,Siddha
+A073,Arthritis,A metabolic disorder characterized by high blood sugar levels.,TM2_009,BIO_070,Yoga
+A074,Migraine,Joint inflammation leading to pain and stiffness.,TM2_006,BIO_015,Ayurveda
+A075,Asthma,A chronic disease affecting the respiratory system.,TM2_001,BIO_084,Homeopathy
+A076,Tuberculosis,A chronic disease affecting the respiratory system.,TM2_056,BIO_073,Unani
+A077,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_002,BIO_006,Homeopathy
+A078,Tuberculosis,Parasitic infection spread by mosquitoes.,TM2_020,BIO_074,Ayurveda
+A079,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_016,BIO_018,Homeopathy
+A080,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_005,BIO_046,Yoga
+A081,Anemia,Joint inflammation leading to pain and stiffness.,TM2_091,BIO_090,Siddha
+A082,Tuberculosis,A common viral infection causing fever and weakness.,TM2_041,BIO_073,Homeopathy
+A083,Asthma,A common viral infection causing fever and weakness.,TM2_023,BIO_032,Homeopathy
+A084,Arthritis,Inflammation of airways causing difficulty in breathing.,TM2_033,BIO_021,Homeopathy
+A085,Hypertension,A condition involving high blood pressure over a long period.,TM2_015,BIO_041,Homeopathy
+A086,Migraine,A common viral infection causing fever and weakness.,TM2_031,BIO_055,Ayurveda
+A087,Migraine,A respiratory condition marked by coughing and irritation.,TM2_070,BIO_070,Siddha
+A088,Anemia,Joint inflammation leading to pain and stiffness.,TM2_069,BIO_097,Siddha
+A089,Fever,A metabolic disorder characterized by high blood sugar levels.,TM2_009,BIO_065,Ayurveda
+A090,Diabetes,A metabolic disorder characterized by high blood sugar levels.,TM2_087,BIO_044,Ayurveda
+A091,Malaria,A respiratory condition marked by coughing and irritation.,TM2_009,BIO_079,Ayurveda
+A092,Cough,A common viral infection causing fever and weakness.,TM2_001,BIO_089,Unani
+A093,Asthma,Joint inflammation leading to pain and stiffness.,TM2_071,BIO_005,Unani
+A094,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_065,BIO_033,Siddha
+A095,Anemia,Joint inflammation leading to pain and stiffness.,TM2_053,BIO_007,Yoga
+A096,Malaria,A common viral infection causing fever and weakness.,TM2_100,BIO_095,Unani
+A097,Migraine,A condition involving high blood pressure over a long period.,TM2_055,BIO_059,Siddha
+A098,Anemia,Deficiency of red blood cells or hemoglobin.,TM2_076,BIO_050,Siddha
+A099,Migraine,Joint inflammation leading to pain and stiffness.,TM2_008,BIO_016,Siddha
+A100,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_014,BIO_099,Homeopathy
+A101,Asthma,A metabolic disorder characterized by high blood sugar levels.,TM2_068,BIO_081,Homeopathy
+A102,Tuberculosis,A neurological condition causing severe headaches.,TM2_094,BIO_059,Ayurveda
+A103,Anemia,A neurological condition causing severe headaches.,TM2_023,BIO_054,Ayurveda
+A104,Malaria,Joint inflammation leading to pain and stiffness.,TM2_033,BIO_015,Siddha
+A105,Hypertension,A condition involving high blood pressure over a long period.,TM2_092,BIO_018,Unani
+A106,Tuberculosis,Parasitic infection spread by mosquitoes.,TM2_086,BIO_017,Siddha
+A107,Migraine,A condition involving high blood pressure over a long period.,TM2_045,BIO_035,Ayurveda
+A108,Cough,A neurological condition causing severe headaches.,TM2_084,BIO_027,Ayurveda
+A109,Anemia,A common viral infection causing fever and weakness.,TM2_072,BIO_017,Ayurveda
+A110,Cough,Joint inflammation leading to pain and stiffness.,TM2_070,BIO_011,Unani
+A111,Asthma,A common viral infection causing fever and weakness.,TM2_073,BIO_063,Yoga
+A112,Tuberculosis,Joint inflammation leading to pain and stiffness.,TM2_049,BIO_006,Homeopathy
+A113,Hypertension,Inflammation of airways causing difficulty in breathing.,TM2_065,BIO_039,Unani
+A114,Diabetes,A metabolic disorder characterized by high blood sugar levels.,TM2_048,BIO_035,Ayurveda
+A115,Diabetes,A metabolic disorder characterized by high blood sugar levels.,TM2_069,BIO_086,Unani
+A116,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_037,BIO_100,Homeopathy
+A117,Asthma,A condition involving high blood pressure over a long period.,TM2_071,BIO_003,Yoga
+A118,Tuberculosis,Joint inflammation leading to pain and stiffness.,TM2_015,BIO_036,Yoga
+A119,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_010,BIO_087,Homeopathy
+A120,Fever,A respiratory condition marked by coughing and irritation.,TM2_089,BIO_009,Ayurveda
+A121,Arthritis,Inflammation of airways causing difficulty in breathing.,TM2_074,BIO_059,Yoga
+A122,Migraine,A condition involving high blood pressure over a long period.,TM2_010,BIO_083,Ayurveda
+A123,Diabetes,Inflammation of airways causing difficulty in breathing.,TM2_027,BIO_062,Ayurveda
+A124,Asthma,A common viral infection causing fever and weakness.,TM2_062,BIO_002,Yoga
+A125,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_098,BIO_074,Homeopathy
+A126,Cough,A neurological condition causing severe headaches.,TM2_001,BIO_058,Siddha
+A127,Asthma,Joint inflammation leading to pain and stiffness.,TM2_076,BIO_056,Unani
+A128,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_069,BIO_052,Homeopathy
+A129,Malaria,A condition involving high blood pressure over a long period.,TM2_093,BIO_097,Unani
+A130,Anemia,A neurological condition causing severe headaches.,TM2_062,BIO_087,Unani
+A131,Malaria,Inflammation of airways causing difficulty in breathing.,TM2_032,BIO_081,Yoga
+A132,Hypertension,A neurological condition causing severe headaches.,TM2_096,BIO_060,Ayurveda
+A133,Arthritis,Inflammation of airways causing difficulty in breathing.,TM2_025,BIO_003,Homeopathy
+A134,Asthma,A respiratory condition marked by coughing and irritation.,TM2_066,BIO_022,Yoga
+A135,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_084,BIO_100,Ayurveda
+A136,Migraine,A respiratory condition marked by coughing and irritation.,TM2_084,BIO_047,Yoga
+A137,Diabetes,A common viral infection causing fever and weakness.,TM2_049,BIO_093,Homeopathy
+A138,Diabetes,A neurological condition causing severe headaches.,TM2_097,BIO_051,Unani
+A139,Anemia,A respiratory condition marked by coughing and irritation.,TM2_070,BIO_059,Unani
+A140,Malaria,A chronic disease affecting the respiratory system.,TM2_071,BIO_088,Ayurveda
+A141,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_099,BIO_015,Yoga
+A142,Asthma,A condition involving high blood pressure over a long period.,TM2_066,BIO_095,Yoga
+A143,Cough,A common viral infection causing fever and weakness.,TM2_040,BIO_003,Siddha
+A144,Hypertension,A condition involving high blood pressure over a long period.,TM2_095,BIO_080,Ayurveda
+A145,Arthritis,Parasitic infection spread by mosquitoes.,TM2_003,BIO_011,Ayurveda
+A146,Cough,Inflammation of airways causing difficulty in breathing.,TM2_086,BIO_081,Unani
+A147,Arthritis,A common viral infection causing fever and weakness.,TM2_013,BIO_068,Siddha
+A148,Fever,A respiratory condition marked by coughing and irritation.,TM2_025,BIO_053,Siddha
+A149,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_030,BIO_019,Ayurveda
+A150,Hypertension,A metabolic disorder characterized by high blood sugar levels.,TM2_088,BIO_055,Yoga
+A151,Tuberculosis,Deficiency of red blood cells or hemoglobin.,TM2_081,BIO_084,Ayurveda
+A152,Hypertension,Parasitic infection spread by mosquitoes.,TM2_021,BIO_048,Siddha
+A153,Malaria,A chronic disease affecting the respiratory system.,TM2_088,BIO_088,Yoga
+A154,Hypertension,Inflammation of airways causing difficulty in breathing.,TM2_045,BIO_090,Homeopathy
+A155,Arthritis,A condition involving high blood pressure over a long period.,TM2_031,BIO_045,Siddha
+A156,Arthritis,A neurological condition causing severe headaches.,TM2_061,BIO_003,Yoga
+A157,Hypertension,A respiratory condition marked by coughing and irritation.,TM2_071,BIO_081,Yoga
+A158,Arthritis,A condition involving high blood pressure over a long period.,TM2_015,BIO_071,Yoga
+A159,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_081,BIO_099,Homeopathy
+A160,Anemia,A chronic disease affecting the respiratory system.,TM2_021,BIO_003,Homeopathy
+A161,Anemia,A respiratory condition marked by coughing and irritation.,TM2_049,BIO_045,Yoga
+A162,Cough,A respiratory condition marked by coughing and irritation.,TM2_078,BIO_015,Unani
+A163,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_074,BIO_076,Unani
+A164,Migraine,A metabolic disorder characterized by high blood sugar levels.,TM2_010,BIO_008,Homeopathy
+A165,Anemia,Deficiency of red blood cells or hemoglobin.,TM2_059,BIO_032,Yoga
+A166,Anemia,A neurological condition causing severe headaches.,TM2_080,BIO_032,Siddha
+A167,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_028,BIO_058,Ayurveda
+A168,Tuberculosis,A neurological condition causing severe headaches.,TM2_025,BIO_067,Siddha
+A169,Anemia,Joint inflammation leading to pain and stiffness.,TM2_021,BIO_063,Siddha
+A170,Malaria,Parasitic infection spread by mosquitoes.,TM2_077,BIO_023,Siddha
+A171,Fever,Parasitic infection spread by mosquitoes.,TM2_003,BIO_063,Ayurveda
+A172,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_029,BIO_096,Yoga
+A173,Migraine,A respiratory condition marked by coughing and irritation.,TM2_065,BIO_038,Unani
+A174,Asthma,A condition involving high blood pressure over a long period.,TM2_017,BIO_064,Siddha
+A175,Asthma,A condition involving high blood pressure over a long period.,TM2_045,BIO_054,Yoga
+A176,Migraine,A respiratory condition marked by coughing and irritation.,TM2_028,BIO_044,Siddha
+A177,Tuberculosis,A neurological condition causing severe headaches.,TM2_097,BIO_037,Homeopathy
+A178,Arthritis,A chronic disease affecting the respiratory system.,TM2_088,BIO_035,Yoga
+A179,Asthma,Deficiency of red blood cells or hemoglobin.,TM2_015,BIO_039,Homeopathy
+A180,Fever,Joint inflammation leading to pain and stiffness.,TM2_098,BIO_003,Homeopathy
+A181,Anemia,A respiratory condition marked by coughing and irritation.,TM2_039,BIO_011,Homeopathy
+A182,Tuberculosis,Parasitic infection spread by mosquitoes.,TM2_009,BIO_080,Homeopathy
+A183,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_042,BIO_027,Ayurveda
+A184,Cough,Inflammation of airways causing difficulty in breathing.,TM2_027,BIO_069,Yoga
+A185,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_001,BIO_033,Homeopathy
+A186,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_046,BIO_037,Ayurveda
+A187,Anemia,A condition involving high blood pressure over a long period.,TM2_025,BIO_024,Siddha
+A188,Hypertension,Parasitic infection spread by mosquitoes.,TM2_055,BIO_021,Siddha
+A189,Fever,A chronic disease affecting the respiratory system.,TM2_078,BIO_010,Homeopathy
+A190,Diabetes,A common viral infection causing fever and weakness.,TM2_085,BIO_094,Yoga
+A191,Migraine,A respiratory condition marked by coughing and irritation.,TM2_084,BIO_008,Unani
+A192,Cough,A condition involving high blood pressure over a long period.,TM2_037,BIO_073,Unani
+A193,Anemia,A chronic disease affecting the respiratory system.,TM2_059,BIO_044,Homeopathy
+A194,Hypertension,A metabolic disorder characterized by high blood sugar levels.,TM2_046,BIO_066,Ayurveda
+A195,Anemia,A chronic disease affecting the respiratory system.,TM2_002,BIO_018,Ayurveda
+A196,Hypertension,Parasitic infection spread by mosquitoes.,TM2_058,BIO_086,Unani
+A197,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_091,BIO_008,Ayurveda
+A198,Asthma,Parasitic infection spread by mosquitoes.,TM2_029,BIO_006,Yoga
+A199,Arthritis,Parasitic infection spread by mosquitoes.,TM2_059,BIO_005,Siddha
+A200,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_041,BIO_088,Siddha
+A201,Hypertension,A respiratory condition marked by coughing and irritation.,TM2_052,BIO_059,Unani
+A202,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_005,BIO_084,Unani
+A203,Anemia,A chronic disease affecting the respiratory system.,TM2_045,BIO_050,Ayurveda
+A204,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_046,BIO_050,Unani
+A205,Malaria,A condition involving high blood pressure over a long period.,TM2_018,BIO_076,Siddha
+A206,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_094,BIO_086,Siddha
+A207,Malaria,Inflammation of airways causing difficulty in breathing.,TM2_087,BIO_015,Ayurveda
+A208,Cough,Parasitic infection spread by mosquitoes.,TM2_026,BIO_064,Homeopathy
+A209,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_027,BIO_045,Siddha
+A210,Hypertension,A condition involving high blood pressure over a long period.,TM2_045,BIO_099,Ayurveda
+A211,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_047,BIO_088,Unani
+A212,Malaria,Deficiency of red blood cells or hemoglobin.,TM2_053,BIO_002,Homeopathy
+A213,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_089,BIO_011,Homeopathy
+A214,Hypertension,A neurological condition causing severe headaches.,TM2_004,BIO_014,Siddha
+A215,Cough,A chronic disease affecting the respiratory system.,TM2_025,BIO_066,Siddha
+A216,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_070,BIO_081,Homeopathy
+A217,Cough,A chronic disease affecting the respiratory system.,TM2_049,BIO_036,Siddha
+A218,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_043,BIO_027,Homeopathy
+A219,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_033,BIO_087,Homeopathy
+A220,Fever,A common viral infection causing fever and weakness.,TM2_011,BIO_072,Homeopathy
+A221,Diabetes,A chronic disease affecting the respiratory system.,TM2_014,BIO_081,Homeopathy
+A222,Cough,A condition involving high blood pressure over a long period.,TM2_085,BIO_051,Ayurveda
+A223,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_088,BIO_087,Unani
+A224,Fever,A condition involving high blood pressure over a long period.,TM2_092,BIO_072,Siddha
+A225,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_064,BIO_047,Siddha
+A226,Cough,A respiratory condition marked by coughing and irritation.,TM2_074,BIO_068,Unani
+A227,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_030,BIO_078,Yoga
+A228,Cough,Inflammation of airways causing difficulty in breathing.,TM2_068,BIO_080,Unani
+A229,Cough,Inflammation of airways causing difficulty in breathing.,TM2_007,BIO_066,Unani
+A230,Cough,Deficiency of red blood cells or hemoglobin.,TM2_034,BIO_043,Ayurveda
+A231,Cough,Deficiency of red blood cells or hemoglobin.,TM2_099,BIO_045,Unani
+A232,Anemia,Deficiency of red blood cells or hemoglobin.,TM2_084,BIO_057,Siddha
+A233,Malaria,Deficiency of red blood cells or hemoglobin.,TM2_007,BIO_078,Unani
+A234,Malaria,A respiratory condition marked by coughing and irritation.,TM2_095,BIO_026,Siddha
+A235,Migraine,A respiratory condition marked by coughing and irritation.,TM2_041,BIO_063,Yoga
+A236,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_069,BIO_003,Unani
+A237,Anemia,A common viral infection causing fever and weakness.,TM2_062,BIO_091,Siddha
+A238,Arthritis,A neurological condition causing severe headaches.,TM2_070,BIO_049,Yoga
+A239,Anemia,Parasitic infection spread by mosquitoes.,TM2_012,BIO_003,Yoga
+A240,Arthritis,Joint inflammation leading to pain and stiffness.,TM2_036,BIO_027,Ayurveda
+A241,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_010,BIO_031,Ayurveda
+A242,Malaria,A condition involving high blood pressure over a long period.,TM2_065,BIO_071,Ayurveda
+A243,Arthritis,A common viral infection causing fever and weakness.,TM2_082,BIO_092,Homeopathy
+A244,Migraine,A neurological condition causing severe headaches.,TM2_067,BIO_088,Yoga
+A245,Arthritis,Joint inflammation leading to pain and stiffness.,TM2_093,BIO_099,Ayurveda
+A246,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_011,BIO_022,Yoga
+A247,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_031,BIO_032,Yoga
+A248,Fever,A respiratory condition marked by coughing and irritation.,TM2_075,BIO_039,Siddha
+A249,Diabetes,A common viral infection causing fever and weakness.,TM2_098,BIO_014,Homeopathy
+A250,Diabetes,A condition involving high blood pressure over a long period.,TM2_040,BIO_050,Homeopathy
+A251,Cough,A condition involving high blood pressure over a long period.,TM2_008,BIO_086,Ayurveda
+A252,Hypertension,A chronic disease affecting the respiratory system.,TM2_062,BIO_071,Siddha
+A253,Fever,A chronic disease affecting the respiratory system.,TM2_086,BIO_043,Unani
+A254,Fever,A chronic disease affecting the respiratory system.,TM2_048,BIO_097,Ayurveda
+A255,Fever,Joint inflammation leading to pain and stiffness.,TM2_002,BIO_012,Homeopathy
+A256,Diabetes,A condition involving high blood pressure over a long period.,TM2_014,BIO_039,Unani
+A257,Asthma,A common viral infection causing fever and weakness.,TM2_089,BIO_034,Ayurveda
+A258,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_060,BIO_056,Yoga
+A259,Arthritis,Joint inflammation leading to pain and stiffness.,TM2_028,BIO_025,Unani
+A260,Migraine,A chronic disease affecting the respiratory system.,TM2_063,BIO_058,Homeopathy
+A261,Hypertension,Deficiency of red blood cells or hemoglobin.,TM2_023,BIO_022,Yoga
+A262,Diabetes,Parasitic infection spread by mosquitoes.,TM2_048,BIO_069,Ayurveda
+A263,Hypertension,A respiratory condition marked by coughing and irritation.,TM2_065,BIO_058,Yoga
+A264,Asthma,A chronic disease affecting the respiratory system.,TM2_069,BIO_080,Ayurveda
+A265,Cough,A common viral infection causing fever and weakness.,TM2_034,BIO_029,Siddha
+A266,Malaria,Inflammation of airways causing difficulty in breathing.,TM2_019,BIO_085,Siddha
+A267,Fever,A common viral infection causing fever and weakness.,TM2_018,BIO_077,Ayurveda
+A268,Tuberculosis,A neurological condition causing severe headaches.,TM2_080,BIO_060,Unani
+A269,Tuberculosis,Parasitic infection spread by mosquitoes.,TM2_027,BIO_094,Homeopathy
+A270,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_067,BIO_022,Ayurveda
+A271,Asthma,Parasitic infection spread by mosquitoes.,TM2_036,BIO_014,Yoga
+A272,Cough,A condition involving high blood pressure over a long period.,TM2_034,BIO_093,Homeopathy
+A273,Diabetes,A neurological condition causing severe headaches.,TM2_005,BIO_038,Unani
+A274,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_024,BIO_055,Unani
+A275,Migraine,Parasitic infection spread by mosquitoes.,TM2_011,BIO_055,Siddha
+A276,Malaria,A chronic disease affecting the respiratory system.,TM2_074,BIO_098,Ayurveda
+A277,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_043,BIO_014,Ayurveda
+A278,Anemia,A chronic disease affecting the respiratory system.,TM2_094,BIO_021,Siddha
+A279,Asthma,A neurological condition causing severe headaches.,TM2_069,BIO_090,Ayurveda
+A280,Arthritis,A metabolic disorder characterized by high blood sugar levels.,TM2_024,BIO_078,Unani
+A281,Malaria,Deficiency of red blood cells or hemoglobin.,TM2_029,BIO_061,Homeopathy
+A282,Malaria,A condition involving high blood pressure over a long period.,TM2_057,BIO_070,Ayurveda
+A283,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_073,BIO_026,Siddha
+A284,Asthma,A metabolic disorder characterized by high blood sugar levels.,TM2_018,BIO_095,Siddha
+A285,Migraine,A metabolic disorder characterized by high blood sugar levels.,TM2_090,BIO_015,Ayurveda
+A286,Cough,A neurological condition causing severe headaches.,TM2_039,BIO_077,Unani
+A287,Tuberculosis,A common viral infection causing fever and weakness.,TM2_005,BIO_072,Ayurveda
+A288,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_037,BIO_044,Yoga
+A289,Hypertension,A chronic disease affecting the respiratory system.,TM2_028,BIO_079,Unani
+A290,Malaria,A neurological condition causing severe headaches.,TM2_077,BIO_043,Yoga
+A291,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_085,BIO_027,Homeopathy
+A292,Diabetes,Inflammation of airways causing difficulty in breathing.,TM2_038,BIO_028,Homeopathy
+A293,Cough,A respiratory condition marked by coughing and irritation.,TM2_079,BIO_084,Homeopathy
+A294,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_027,BIO_003,Ayurveda
+A295,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_027,BIO_019,Homeopathy
+A296,Fever,A metabolic disorder characterized by high blood sugar levels.,TM2_037,BIO_095,Yoga
+A297,Cough,A condition involving high blood pressure over a long period.,TM2_046,BIO_050,Unani
+A298,Anemia,Parasitic infection spread by mosquitoes.,TM2_001,BIO_062,Homeopathy
+A299,Asthma,Deficiency of red blood cells or hemoglobin.,TM2_100,BIO_047,Ayurveda
+A300,Cough,A common viral infection causing fever and weakness.,TM2_057,BIO_073,Ayurveda
+A301,Arthritis,A condition involving high blood pressure over a long period.,TM2_089,BIO_088,Unani
+A302,Malaria,Parasitic infection spread by mosquitoes.,TM2_010,BIO_003,Ayurveda
+A303,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_051,BIO_079,Homeopathy
+A304,Diabetes,A common viral infection causing fever and weakness.,TM2_040,BIO_078,Yoga
+A305,Fever,Parasitic infection spread by mosquitoes.,TM2_086,BIO_066,Ayurveda
+A306,Asthma,A chronic disease affecting the respiratory system.,TM2_068,BIO_071,Yoga
+A307,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_009,BIO_083,Siddha
+A308,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_001,BIO_001,Yoga
+A309,Asthma,A condition involving high blood pressure over a long period.,TM2_030,BIO_014,Ayurveda
+A310,Asthma,A condition involving high blood pressure over a long period.,TM2_018,BIO_082,Siddha
+A311,Malaria,Parasitic infection spread by mosquitoes.,TM2_013,BIO_098,Ayurveda
+A312,Tuberculosis,A neurological condition causing severe headaches.,TM2_056,BIO_004,Unani
+A313,Malaria,Parasitic infection spread by mosquitoes.,TM2_069,BIO_013,Siddha
+A314,Malaria,Parasitic infection spread by mosquitoes.,TM2_100,BIO_037,Yoga
+A315,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_061,BIO_091,Siddha
+A316,Diabetes,Parasitic infection spread by mosquitoes.,TM2_043,BIO_049,Yoga
+A317,Arthritis,Deficiency of red blood cells or hemoglobin.,TM2_032,BIO_045,Siddha
+A318,Cough,A common viral infection causing fever and weakness.,TM2_061,BIO_025,Ayurveda
+A319,Hypertension,A common viral infection causing fever and weakness.,TM2_044,BIO_019,Siddha
+A320,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_100,BIO_002,Homeopathy
+A321,Malaria,A neurological condition causing severe headaches.,TM2_092,BIO_027,Unani
+A322,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_082,BIO_001,Ayurveda
+A323,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_029,BIO_023,Homeopathy
+A324,Asthma,A chronic disease affecting the respiratory system.,TM2_022,BIO_067,Siddha
+A325,Fever,A respiratory condition marked by coughing and irritation.,TM2_014,BIO_080,Ayurveda
+A326,Asthma,A condition involving high blood pressure over a long period.,TM2_061,BIO_054,Yoga
+A327,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_093,BIO_074,Siddha
+A328,Malaria,A respiratory condition marked by coughing and irritation.,TM2_082,BIO_063,Ayurveda
+A329,Malaria,A condition involving high blood pressure over a long period.,TM2_082,BIO_012,Siddha
+A330,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_077,BIO_068,Homeopathy
+A331,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_075,BIO_034,Siddha
+A332,Fever,A metabolic disorder characterized by high blood sugar levels.,TM2_039,BIO_064,Ayurveda
+A333,Tuberculosis,A common viral infection causing fever and weakness.,TM2_005,BIO_087,Siddha
+A334,Tuberculosis,A common viral infection causing fever and weakness.,TM2_059,BIO_063,Yoga
+A335,Arthritis,A common viral infection causing fever and weakness.,TM2_060,BIO_035,Siddha
+A336,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_005,BIO_053,Siddha
+A337,Fever,Joint inflammation leading to pain and stiffness.,TM2_092,BIO_004,Ayurveda
+A338,Tuberculosis,A condition involving high blood pressure over a long period.,TM2_082,BIO_022,Unani
+A339,Asthma,A condition involving high blood pressure over a long period.,TM2_096,BIO_036,Yoga
+A340,Hypertension,A chronic disease affecting the respiratory system.,TM2_013,BIO_011,Unani
+A341,Fever,A respiratory condition marked by coughing and irritation.,TM2_061,BIO_053,Siddha
+A342,Malaria,A neurological condition causing severe headaches.,TM2_005,BIO_086,Siddha
+A343,Asthma,A condition involving high blood pressure over a long period.,TM2_090,BIO_041,Ayurveda
+A344,Cough,Deficiency of red blood cells or hemoglobin.,TM2_054,BIO_078,Homeopathy
+A345,Cough,A respiratory condition marked by coughing and irritation.,TM2_039,BIO_005,Homeopathy
+A346,Asthma,Deficiency of red blood cells or hemoglobin.,TM2_071,BIO_044,Unani
+A347,Migraine,Joint inflammation leading to pain and stiffness.,TM2_036,BIO_047,Unani
+A348,Fever,A respiratory condition marked by coughing and irritation.,TM2_028,BIO_100,Ayurveda
+A349,Malaria,A respiratory condition marked by coughing and irritation.,TM2_057,BIO_011,Unani
+A350,Fever,A common viral infection causing fever and weakness.,TM2_032,BIO_075,Ayurveda
+A351,Migraine,A respiratory condition marked by coughing and irritation.,TM2_060,BIO_041,Homeopathy
+A352,Malaria,Parasitic infection spread by mosquitoes.,TM2_061,BIO_022,Yoga
+A353,Fever,A respiratory condition marked by coughing and irritation.,TM2_074,BIO_006,Yoga
+A354,Fever,Inflammation of airways causing difficulty in breathing.,TM2_039,BIO_054,Yoga
+A355,Migraine,A condition involving high blood pressure over a long period.,TM2_040,BIO_019,Unani
+A356,Malaria,Inflammation of airways causing difficulty in breathing.,TM2_012,BIO_067,Unani
+A357,Diabetes,Parasitic infection spread by mosquitoes.,TM2_019,BIO_056,Unani
+A358,Hypertension,A chronic disease affecting the respiratory system.,TM2_031,BIO_052,Unani
+A359,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_067,BIO_050,Ayurveda
+A360,Asthma,A respiratory condition marked by coughing and irritation.,TM2_031,BIO_071,Homeopathy
+A361,Migraine,A neurological condition causing severe headaches.,TM2_056,BIO_060,Ayurveda
+A362,Migraine,Parasitic infection spread by mosquitoes.,TM2_033,BIO_067,Unani
+A363,Arthritis,A common viral infection causing fever and weakness.,TM2_057,BIO_060,Ayurveda
+A364,Malaria,A neurological condition causing severe headaches.,TM2_076,BIO_080,Yoga
+A365,Malaria,A neurological condition causing severe headaches.,TM2_083,BIO_016,Yoga
+A366,Malaria,Parasitic infection spread by mosquitoes.,TM2_031,BIO_038,Siddha
+A367,Diabetes,Parasitic infection spread by mosquitoes.,TM2_052,BIO_012,Unani
+A368,Arthritis,A chronic disease affecting the respiratory system.,TM2_063,BIO_036,Unani
+A369,Arthritis,Inflammation of airways causing difficulty in breathing.,TM2_030,BIO_063,Homeopathy
+A370,Diabetes,A neurological condition causing severe headaches.,TM2_032,BIO_054,Yoga
+A371,Fever,A chronic disease affecting the respiratory system.,TM2_081,BIO_035,Unani
+A372,Fever,A respiratory condition marked by coughing and irritation.,TM2_005,BIO_027,Yoga
+A373,Malaria,A respiratory condition marked by coughing and irritation.,TM2_013,BIO_057,Unani
+A374,Asthma,A chronic disease affecting the respiratory system.,TM2_040,BIO_083,Homeopathy
+A375,Malaria,Parasitic infection spread by mosquitoes.,TM2_051,BIO_063,Unani
+A376,Hypertension,A neurological condition causing severe headaches.,TM2_067,BIO_036,Homeopathy
+A377,Cough,Deficiency of red blood cells or hemoglobin.,TM2_031,BIO_060,Ayurveda
+A378,Hypertension,A condition involving high blood pressure over a long period.,TM2_082,BIO_059,Homeopathy
+A379,Anemia,Joint inflammation leading to pain and stiffness.,TM2_026,BIO_073,Ayurveda
+A380,Asthma,A condition involving high blood pressure over a long period.,TM2_009,BIO_080,Siddha
+A381,Fever,A respiratory condition marked by coughing and irritation.,TM2_023,BIO_061,Yoga
+A382,Fever,Joint inflammation leading to pain and stiffness.,TM2_018,BIO_076,Ayurveda
+A383,Anemia,Parasitic infection spread by mosquitoes.,TM2_052,BIO_006,Unani
+A384,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_048,BIO_053,Ayurveda
+A385,Fever,A condition involving high blood pressure over a long period.,TM2_030,BIO_022,Unani
+A386,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_099,BIO_028,Yoga
+A387,Asthma,A metabolic disorder characterized by high blood sugar levels.,TM2_034,BIO_096,Unani
+A388,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_100,BIO_063,Homeopathy
+A389,Arthritis,Inflammation of airways causing difficulty in breathing.,TM2_065,BIO_084,Unani
+A390,Migraine,Joint inflammation leading to pain and stiffness.,TM2_042,BIO_086,Homeopathy
+A391,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_064,BIO_009,Yoga
+A392,Fever,A condition involving high blood pressure over a long period.,TM2_035,BIO_074,Homeopathy
+A393,Migraine,A common viral infection causing fever and weakness.,TM2_073,BIO_002,Yoga
+A394,Fever,A chronic disease affecting the respiratory system.,TM2_011,BIO_022,Siddha
+A395,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_030,BIO_078,Yoga
+A396,Migraine,Inflammation of airways causing difficulty in breathing.,TM2_059,BIO_045,Ayurveda
+A397,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_013,BIO_026,Siddha
+A398,Arthritis,A neurological condition causing severe headaches.,TM2_008,BIO_079,Ayurveda
+A399,Fever,A neurological condition causing severe headaches.,TM2_018,BIO_037,Ayurveda
+A400,Asthma,Joint inflammation leading to pain and stiffness.,TM2_020,BIO_077,Unani
+A401,Diabetes,A chronic disease affecting the respiratory system.,TM2_015,BIO_012,Ayurveda
+A402,Malaria,Joint inflammation leading to pain and stiffness.,TM2_098,BIO_040,Unani
+A403,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_060,BIO_024,Unani
+A404,Anemia,A chronic disease affecting the respiratory system.,TM2_010,BIO_061,Homeopathy
+A405,Fever,A common viral infection causing fever and weakness.,TM2_096,BIO_088,Ayurveda
+A406,Arthritis,A common viral infection causing fever and weakness.,TM2_030,BIO_048,Unani
+A407,Cough,Joint inflammation leading to pain and stiffness.,TM2_070,BIO_038,Ayurveda
+A408,Diabetes,Parasitic infection spread by mosquitoes.,TM2_018,BIO_020,Ayurveda
+A409,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_016,BIO_018,Unani
+A410,Anemia,Parasitic infection spread by mosquitoes.,TM2_029,BIO_049,Ayurveda
+A411,Cough,A common viral infection causing fever and weakness.,TM2_065,BIO_092,Siddha
+A412,Diabetes,Deficiency of red blood cells or hemoglobin.,TM2_057,BIO_079,Yoga
+A413,Tuberculosis,A common viral infection causing fever and weakness.,TM2_064,BIO_077,Yoga
+A414,Cough,Joint inflammation leading to pain and stiffness.,TM2_027,BIO_039,Unani
+A415,Malaria,Inflammation of airways causing difficulty in breathing.,TM2_041,BIO_084,Ayurveda
+A416,Malaria,A common viral infection causing fever and weakness.,TM2_067,BIO_052,Yoga
+A417,Asthma,Parasitic infection spread by mosquitoes.,TM2_052,BIO_021,Unani
+A418,Diabetes,Inflammation of airways causing difficulty in breathing.,TM2_087,BIO_001,Siddha
+A419,Tuberculosis,A common viral infection causing fever and weakness.,TM2_069,BIO_079,Ayurveda
+A420,Cough,A metabolic disorder characterized by high blood sugar levels.,TM2_025,BIO_016,Yoga
+A421,Fever,A metabolic disorder characterized by high blood sugar levels.,TM2_055,BIO_030,Homeopathy
+A422,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_023,BIO_030,Yoga
+A423,Hypertension,A common viral infection causing fever and weakness.,TM2_054,BIO_059,Unani
+A424,Malaria,A condition involving high blood pressure over a long period.,TM2_022,BIO_083,Yoga
+A425,Diabetes,A condition involving high blood pressure over a long period.,TM2_020,BIO_015,Unani
+A426,Arthritis,A neurological condition causing severe headaches.,TM2_061,BIO_070,Siddha
+A427,Malaria,Parasitic infection spread by mosquitoes.,TM2_041,BIO_050,Homeopathy
+A428,Asthma,Deficiency of red blood cells or hemoglobin.,TM2_037,BIO_055,Yoga
+A429,Tuberculosis,A chronic disease affecting the respiratory system.,TM2_080,BIO_061,Homeopathy
+A430,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_045,BIO_061,Siddha
+A431,Asthma,Inflammation of airways causing difficulty in breathing.,TM2_016,BIO_072,Unani
+A432,Anemia,A neurological condition causing severe headaches.,TM2_092,BIO_050,Yoga
+A433,Tuberculosis,A common viral infection causing fever and weakness.,TM2_076,BIO_099,Yoga
+A434,Asthma,A condition involving high blood pressure over a long period.,TM2_070,BIO_068,Yoga
+A435,Cough,A condition involving high blood pressure over a long period.,TM2_048,BIO_071,Homeopathy
+A436,Migraine,A chronic disease affecting the respiratory system.,TM2_046,BIO_073,Homeopathy
+A437,Diabetes,Inflammation of airways causing difficulty in breathing.,TM2_035,BIO_099,Ayurveda
+A438,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_043,BIO_060,Siddha
+A439,Cough,Deficiency of red blood cells or hemoglobin.,TM2_036,BIO_093,Unani
+A440,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_039,BIO_019,Yoga
+A441,Fever,A chronic disease affecting the respiratory system.,TM2_009,BIO_027,Ayurveda
+A442,Anemia,Joint inflammation leading to pain and stiffness.,TM2_096,BIO_021,Siddha
+A443,Arthritis,A chronic disease affecting the respiratory system.,TM2_001,BIO_018,Ayurveda
+A444,Hypertension,A neurological condition causing severe headaches.,TM2_066,BIO_011,Homeopathy
+A445,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_030,BIO_076,Homeopathy
+A446,Asthma,Joint inflammation leading to pain and stiffness.,TM2_057,BIO_097,Homeopathy
+A447,Cough,Joint inflammation leading to pain and stiffness.,TM2_064,BIO_046,Ayurveda
+A448,Migraine,Joint inflammation leading to pain and stiffness.,TM2_003,BIO_060,Siddha
+A449,Malaria,A neurological condition causing severe headaches.,TM2_034,BIO_051,Ayurveda
+A450,Asthma,Parasitic infection spread by mosquitoes.,TM2_007,BIO_019,Yoga
+A451,Fever,A respiratory condition marked by coughing and irritation.,TM2_049,BIO_026,Siddha
+A452,Anemia,A metabolic disorder characterized by high blood sugar levels.,TM2_095,BIO_069,Siddha
+A453,Anemia,A chronic disease affecting the respiratory system.,TM2_095,BIO_088,Homeopathy
+A454,Tuberculosis,A chronic disease affecting the respiratory system.,TM2_067,BIO_015,Yoga
+A455,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_080,BIO_029,Siddha
+A456,Diabetes,A condition involving high blood pressure over a long period.,TM2_004,BIO_041,Unani
+A457,Tuberculosis,A metabolic disorder characterized by high blood sugar levels.,TM2_059,BIO_019,Ayurveda
+A458,Cough,A chronic disease affecting the respiratory system.,TM2_098,BIO_098,Ayurveda
+A459,Arthritis,Deficiency of red blood cells or hemoglobin.,TM2_081,BIO_097,Homeopathy
+A460,Fever,Joint inflammation leading to pain and stiffness.,TM2_028,BIO_073,Ayurveda
+A461,Fever,Joint inflammation leading to pain and stiffness.,TM2_022,BIO_024,Ayurveda
+A462,Migraine,Deficiency of red blood cells or hemoglobin.,TM2_016,BIO_065,Yoga
+A463,Diabetes,A common viral infection causing fever and weakness.,TM2_059,BIO_043,Siddha
+A464,Diabetes,A common viral infection causing fever and weakness.,TM2_080,BIO_073,Unani
+A465,Cough,Parasitic infection spread by mosquitoes.,TM2_084,BIO_007,Homeopathy
+A466,Arthritis,A common viral infection causing fever and weakness.,TM2_051,BIO_099,Siddha
+A467,Arthritis,A neurological condition causing severe headaches.,TM2_071,BIO_061,Ayurveda
+A468,Cough,A condition involving high blood pressure over a long period.,TM2_099,BIO_045,Yoga
+A469,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_052,BIO_025,Homeopathy
+A470,Malaria,A respiratory condition marked by coughing and irritation.,TM2_068,BIO_008,Ayurveda
+A471,Diabetes,A neurological condition causing severe headaches.,TM2_078,BIO_067,Unani
+A472,Malaria,A respiratory condition marked by coughing and irritation.,TM2_022,BIO_032,Unani
+A473,Diabetes,Parasitic infection spread by mosquitoes.,TM2_019,BIO_061,Yoga
+A474,Asthma,A metabolic disorder characterized by high blood sugar levels.,TM2_036,BIO_055,Homeopathy
+A475,Asthma,Deficiency of red blood cells or hemoglobin.,TM2_010,BIO_023,Yoga
+A476,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_068,BIO_068,Ayurveda
+A477,Asthma,Inflammation of airways causing difficulty in breathing.,TM2_034,BIO_016,Yoga
+A478,Diabetes,A respiratory condition marked by coughing and irritation.,TM2_088,BIO_084,Yoga
+A479,Tuberculosis,A condition involving high blood pressure over a long period.,TM2_036,BIO_019,Unani
+A480,Arthritis,A respiratory condition marked by coughing and irritation.,TM2_035,BIO_078,Siddha
+A481,Malaria,A metabolic disorder characterized by high blood sugar levels.,TM2_028,BIO_057,Yoga
+A482,Hypertension,Joint inflammation leading to pain and stiffness.,TM2_036,BIO_099,Ayurveda
+A483,Asthma,Joint inflammation leading to pain and stiffness.,TM2_063,BIO_062,Ayurveda
+A484,Anemia,Inflammation of airways causing difficulty in breathing.,TM2_052,BIO_028,Yoga
+A485,Malaria,A respiratory condition marked by coughing and irritation.,TM2_075,BIO_007,Unani
+A486,Tuberculosis,Joint inflammation leading to pain and stiffness.,TM2_060,BIO_083,Ayurveda
+A487,Cough,A common viral infection causing fever and weakness.,TM2_054,BIO_061,Homeopathy
+A488,Asthma,A condition involving high blood pressure over a long period.,TM2_098,BIO_064,Yoga
+A489,Hypertension,Inflammation of airways causing difficulty in breathing.,TM2_079,BIO_029,Homeopathy
+A490,Fever,A respiratory condition marked by coughing and irritation.,TM2_025,BIO_020,Unani
+A491,Hypertension,A chronic disease affecting the respiratory system.,TM2_086,BIO_006,Siddha
+A492,Fever,Deficiency of red blood cells or hemoglobin.,TM2_014,BIO_094,Siddha
+A493,Tuberculosis,A respiratory condition marked by coughing and irritation.,TM2_007,BIO_053,Unani
+A494,Diabetes,Parasitic infection spread by mosquitoes.,TM2_099,BIO_060,Ayurveda
+A495,Anemia,A neurological condition causing severe headaches.,TM2_098,BIO_011,Unani
+A496,Asthma,A common viral infection causing fever and weakness.,TM2_055,BIO_040,Ayurveda
+A497,Hypertension,A condition involving high blood pressure over a long period.,TM2_005,BIO_079,Ayurveda
+A498,Cough,Deficiency of red blood cells or hemoglobin.,TM2_036,BIO_075,Homeopathy
+A499,Tuberculosis,Inflammation of airways causing difficulty in breathing.,TM2_036,BIO_020,Ayurveda
+A500,Anemia,A chronic disease affecting the respiratory system.,TM2_054,BIO_071,Yoga
