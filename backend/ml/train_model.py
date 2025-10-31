@@ -9,7 +9,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 
 # Load dataset
 print("📘 Loading dataset...")
-df = pd.read_csv("ml/model_data_60.csv")
+df = pd.read_csv("ml/ml_model_2.csv")
 print(f"✅ Dataset loaded with {len(df)} records.")
 print(f"📊 Columns: {df.columns.tolist()}")
 
