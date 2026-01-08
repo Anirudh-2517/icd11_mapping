@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
@@ -17,7 +16,6 @@ function App() {
       setIsLoggedIn(true);
     }
   }, []);
-
   return (
     <Router>
       <Routes>
@@ -25,7 +23,6 @@ function App() {
           path="/login"
           element={<Login setIsLoggedIn={setIsLoggedIn} setUserData={setUserData} />}
         />
-
         <Route
           path="/"
           element={
